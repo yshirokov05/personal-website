@@ -2,6 +2,72 @@ import './Updates.css'
 
 const updates = [
   {
+    date: 'June 2026',
+    entries: [
+      {
+        project: 'FYMO',
+        title: 'HYSA APY Insights',
+        description:
+          'Added high-yield savings tracking with AI-estimated APYs and manual entry, surfaced directly on each cash account row so idle cash is easy to evaluate.',
+        tags: ['AI', 'React', 'Finance'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Credit Card Intelligence',
+        description:
+          'Built a credit-card summary with side-by-side comparison, detailed card specs, and an option to specify the exact card for precise rewards and fee data.',
+        tags: ['React', 'Data', 'UX'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Email-Based Premium & Comp Panel',
+        description:
+          'Made premium entitlements follow a user across login methods by keying off email, and shipped an owner self-serve panel to grant or revoke complimentary premium by email.',
+        tags: ['Auth', 'Flask', 'Firebase'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Snapshot-Based Returns Engine',
+        description:
+          'Rebuilt portfolio period returns on reconstructed historical snapshots (Vanguard-style $ and % gain), fixed N/A periods via Yahoo Finance historical prices, handled short option positions, and excluded transfers from spending totals.',
+        tags: ['Finance', 'Python', 'Yahoo Finance'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Security & Accessibility Hardening',
+        description:
+          'Shipped an XSS fix, security headers, CORS hardening, and MIME validation, patched dependency CVEs, and added modal focus traps, Escape handling, and a WCAG 2.1 AA pass across high-traffic screens.',
+        tags: ['Security', 'a11y', 'WCAG'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Reliability & Compliance',
+        description:
+          'Added Sentry error monitoring, daily Firestore backups to GCS, and a financial-math unit suite gating CI, plus per-IP rate limiting, optimistic concurrency on saves, a CCPA privacy/terms rewrite, and CA auto-renewal billing disclosure.',
+        tags: ['Observability', 'Compliance', 'CI'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Mobile & Brand Polish',
+        description:
+          'Made the Industry Allocation donut responsive on mobile, added real Fymo app icons and legible cash-account names, improved Plaid account selection and the onboarding flow, and refined landing-page trust copy.',
+        tags: ['UI', 'Mobile', 'Plaid API'],
+      },
+    ],
+  },
+  {
+    date: 'May 2026',
+    entries: [
+      {
+        project: 'FYMO',
+        title: 'Landing Page Polish',
+        description:
+          'Rewrote the landing-page CTA copy and eyebrow labels for clarity and fixed Open Graph image rendering for cleaner link previews.',
+        tags: ['Marketing', 'UI', 'SEO'],
+      },
+    ],
+  },
+  {
     date: 'April 2026',
     entries: [
       {
