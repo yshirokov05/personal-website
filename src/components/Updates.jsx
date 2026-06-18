@@ -60,10 +60,45 @@ const updates = [
     entries: [
       {
         project: 'FYMO',
-        title: 'Landing Page Polish',
+        title: 'AI Stack: Gemini → Claude',
         description:
-          'Rewrote the landing-page CTA copy and eyebrow labels for clarity and fixed Open Graph image rendering for cleaner link previews.',
-        tags: ['Marketing', 'UI', 'SEO'],
+          'Migrated the entire AI stack from Google Gemini to the Claude API — wealth insights, the AI Analyst, and paystub/document extraction now run on Claude, with SSE-streamed responses and a Clear Chat control.',
+        tags: ['Claude API', 'AI', 'Python'],
+      },
+      {
+        project: 'FYMO',
+        title: '2FA & Morning Brief (v1.6–v1.7)',
+        description:
+          'Shipped two-factor authentication, a scheduled morning-brief email via Resend, a Financial Health Score, and a dividend & earnings calendar.',
+        tags: ['Security', 'React', 'Flask'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Data Integrity & Advanced Tools',
+        description:
+          'Added atomic writes with an audit log, milestone tracking, tax-loss harvesting, capital-gains tax integration, and lazy-loaded routes for faster page loads.',
+        tags: ['Firebase', 'Finance', 'Performance'],
+      },
+      {
+        project: 'FYMO',
+        title: 'Return-Math Overhaul',
+        description:
+          'Replaced a broken Modified Dietz calculation with a value-weighted current-basket return, fixed benchmark anchoring and cash-flow income, and surfaced honest N/A states when a period can’t be computed.',
+        tags: ['Finance', 'Python', 'Data Viz'],
+      },
+      {
+        project: 'FYMO',
+        title: 'UI Revamp & Dark Mode',
+        description:
+          'Refined the dashboard with minimal cards, cleaner donut charts, a sorted category breakdown, and tax-math transparency, plus a full dark-mode sweep across components.',
+        tags: ['React', 'UI', 'CSS'],
+      },
+      {
+        project: 'FYMO',
+        title: 'SEO & Marketing Kit',
+        description:
+          'Shipped a punchier SERP listing with Open Graph images and JSON-LD structured data, a richer sitemap, auto-generated OG PNGs on deploy, and an Instagram marketing playbook; rewrote the landing-page CTA copy.',
+        tags: ['SEO', 'Marketing', 'Open Graph'],
       },
     ],
   },
