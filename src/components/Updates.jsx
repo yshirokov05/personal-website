@@ -29,7 +29,7 @@ const updates = [
         project: 'FYMO',
         title: 'Snapshot-Based Returns Engine',
         description:
-          'Rebuilt portfolio period returns on reconstructed historical snapshots (Vanguard-style $ and % gain), fixed N/A periods via Yahoo Finance historical prices, handled short option positions, and excluded transfers from spending totals.',
+          'Rebuilt portfolio period returns on reconstructed historical snapshots (Vanguard-style $ and % gain), fixed N/A periods via Yahoo Finance historical prices, handled short option positions, added broker realized-gains overrides for ground-truth accuracy, and excluded transfers from spending totals.',
         tags: ['Finance', 'Python', 'Yahoo Finance'],
       },
       {
