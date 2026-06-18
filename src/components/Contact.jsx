@@ -1,19 +1,42 @@
 import { useState } from 'react'
 import './Contact.css'
 
+// Set VITE_FORMSPREE_ENDPOINT in your Vercel env (or .env) to your Formspree
+// form URL, e.g. https://formspree.io/f/abcdwxyz. Create one free at formspree.io.
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState(null)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
   function handleChange(e) {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // Wire up to Formspree, EmailJS, or your own endpoint:
-    // e.g. fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: JSON.stringify(form) })
-    setStatus('sent')
+
+    if (!FORMSPREE_ENDPOINT) {
+      // No endpoint configured — fall back to a prefilled email so the
+      // message is never silently lost.
+      const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
+      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
+      window.location.href = `mailto:yshirokov05@gmail.com?subject=${subject}&body=${body}`
+      return
+    }
+
+    setStatus('sending')
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -78,8 +101,19 @@ export default function Contact() {
                     value={form.message} onChange={handleChange} required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Send Message
+                {status === 'error' && (
+                  <p className="contact__error">
+                    Something went wrong sending your message. Please email me directly at{' '}
+                    <a href="mailto:yshirokov05@gmail.com">yshirokov05@gmail.com</a>.
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending…' : 'Send Message'}
                 </button>
               </>
             )}
