@@ -3,19 +3,19 @@ import './Skills.css'
 const categories = [
   {
     name: 'Languages',
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Rust', 'SQL'],
+    skills: ['Python', 'JavaScript', 'TypeScript', 'C#', 'SQL'],
   },
   {
     name: 'Frontend',
     skills: ['React', 'Vite', 'HTML/CSS', 'Responsive Design'],
   },
   {
-    name: 'Backend',
-    skills: ['Node.js', 'REST APIs', 'PostgreSQL', 'Redis'],
+    name: 'Backend & Data',
+    skills: ['Flask', 'FastAPI', 'Node.js', 'Firebase', 'REST APIs', 'BigQuery'],
   },
   {
-    name: 'Tools & Other',
-    skills: ['Git', 'Docker', 'Vercel', 'Linux', 'Machine Learning'],
+    name: 'ML & Tools',
+    skills: ['PyTorch', 'Pandas', 'Plaid API', 'Stripe', 'Docker', 'Git', 'Vercel'],
   },
 ]
 
