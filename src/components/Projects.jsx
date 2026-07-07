@@ -2,12 +2,12 @@ import './Projects.css'
 
 const projects = [
   {
-    title: 'FYMO',
+    title: 'PerfinLab',
     description:
-      'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, Claude-powered AI wealth insights, and distributed rate-limiting with dual-layer persistence.',
-    tags: ['React', 'Flask', 'Firebase', 'Plaid API'],
-    link: 'https://projectfymo.com/',
-    repo: 'https://github.com/yshirokov05/personal-finance-app-pfa',
+      'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, Claude-powered AI Analyst chat and financial briefs, and distributed rate-limiting with dual-layer persistence.',
+    tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
+    link: 'https://perfinlab.com/',
+    repo: 'https://github.com/yshirokov05/perfinlab',
   },
   {
     title: 'Vanguard RL',

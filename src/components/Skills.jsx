@@ -15,7 +15,7 @@ const categories = [
   },
   {
     name: 'ML & Tools',
-    skills: ['PyTorch', 'Pandas', 'Plaid API', 'Stripe', 'Docker', 'Git', 'Vercel'],
+    skills: ['PyTorch', 'Pandas', 'Claude API', 'Plaid API', 'Stripe', 'Docker', 'Git', 'Vercel'],
   },
 ]
 
