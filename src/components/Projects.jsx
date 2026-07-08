@@ -3,6 +3,7 @@ import './Projects.css'
 const projects = [
   {
     title: 'PerfinLab',
+    logo: '/perfinlab-logo.png',
     description:
       'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, Claude-powered AI Analyst chat and financial briefs, and distributed rate-limiting with dual-layer persistence.',
     tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
@@ -62,7 +63,10 @@ export default function Projects() {
           {projects.map(p => (
             <article key={p.title} className="project-card">
               <div className="project-card__top">
-                <h3 className="project-card__title">{p.title}</h3>
+                <div className="project-card__head">
+                  {p.logo && <img src={p.logo} alt="" className="project-card__logo" />}
+                  <h3 className="project-card__title">{p.title}</h3>
+                </div>
                 <p className="project-card__desc">{p.description}</p>
               </div>
               <div className="project-card__bottom">

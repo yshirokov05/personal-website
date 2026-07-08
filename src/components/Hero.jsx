@@ -17,6 +17,9 @@ export default function Hero() {
           <a href="#projects" className="btn btn-primary">View My Work</a>
           <a href="#contact" className="btn btn-outline">Get In Touch</a>
         </div>
+        <p className="hero__flagship">
+          Flagship project: <a href="https://perfinlab.com/" target="_blank" rel="noreferrer">PerfinLab →</a>
+        </p>
 
         <div className="hero__scroll-hint" aria-hidden="true">
           <span />
