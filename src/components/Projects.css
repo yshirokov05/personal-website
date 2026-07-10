@@ -20,10 +20,23 @@
   transform: translateY(-4px);
 }
 
+.project-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.project-card__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
 .project-card__title {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 10px;
   color: var(--text);
 }
 

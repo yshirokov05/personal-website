@@ -40,6 +40,17 @@
 
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
 
+.hero__flagship {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.hero__flagship a {
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero__flagship a:hover { text-decoration: underline; }
+
 /* Ambient glow */
 .hero__glow {
   position: absolute;
