@@ -5,7 +5,7 @@ const projects = [
     title: 'PerfinLab',
     logo: '/perfinlab-logo.png',
     description:
-      'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, Claude-powered AI Analyst chat and financial briefs, and distributed rate-limiting with dual-layer persistence.',
+      'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, a Claude-powered AI Analyst with live web search, and Firestore-transactional rate-limiting across a 7-blueprint Flask backend.',
     tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
     link: 'https://perfinlab.com/',
     repo: 'https://github.com/yshirokov05/perfinlab',
