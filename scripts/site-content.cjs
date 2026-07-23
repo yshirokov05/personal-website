@@ -14,7 +14,7 @@ const projects = [
   {
     title: 'PerfinLab',
     description:
-      'Serverless full-stack finance app with Plaid API sync, a 50-state tax module at 98%+ accuracy, a Claude-powered AI Analyst with live web search, and Firestore-transactional rate-limiting across a 7-blueprint Flask backend.',
+      'Full-stack personal finance platform with Plaid bank sync, a 50-state tax projection engine, a 0-100 financial health score, and Claude-powered AI insights — chat with live web search, morning briefs, and document extraction — on a 7-blueprint Flask/Firebase backend.',
   },
   {
     title: 'Vanguard RL',
