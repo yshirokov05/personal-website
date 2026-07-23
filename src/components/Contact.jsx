@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './Contact.css'
 
-// Set VITE_FORMSPREE_ENDPOINT in your Vercel env (or .env) to your Formspree
-// form URL, e.g. https://formspree.io/f/abcdwxyz. Create one free at formspree.io.
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT
+// Formspree form endpoint. Public by design (it lives in the form action),
+// so it's safe to commit. Override per-environment with VITE_FORMSPREE_ENDPOINT.
+const FORMSPREE_ENDPOINT =
+  import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xykrnkwz'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
