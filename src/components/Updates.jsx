@@ -2,6 +2,60 @@ import './Updates.css'
 
 const updates = [
   {
+    date: 'July 2026',
+    entries: [
+      {
+        project: 'PerfinLab',
+        title: 'Backend Architecture Overhaul',
+        description:
+          'Split the 3,800-line api.py monolith into 7 domain blueprints with shared route helpers, flipped every route to a stricter auth decorator, and fixed a sync-breaking regression that surfaced right after the split.',
+        tags: ['Python', 'Flask', 'Architecture'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'AI Analyst Gets Real Web Search',
+        description:
+          "Gave the AI Analyst chat live web search instead of static knowledge, so it can answer questions about current rates and offers with real citations, and gave margin loans their own AI summary instead of reusing the credit-card one.",
+        tags: ['AI', 'Claude API', 'Finance'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Portfolio & Tax Correctness Fixes',
+        description:
+          'Fixed portfolio trend cratering on sell-offs and a silent bug that broke period returns and tax-loss harvesting on every sync, then added owner-facing backfill diagnostics (persisted to Firestore, on-demand endpoint, real error surfacing) to catch the next one faster.',
+        tags: ['Finance', 'Python', 'Bugfix'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Production Observability & Reliability',
+        description:
+          'Enabled Sentry error monitoring across frontend and backend, turned on Dependabot for automated dependency updates plus uptime monitoring, enabled Firestore backups, and quieted noisy false-alarm errors from stale price lookups on cash-like assets.',
+        tags: ['Observability', 'Reliability', 'DevOps'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Account Management & Personalization',
+        description:
+          'Renamed debts and cards now keep their custom name across future bank syncs instead of reverting, theme preference (dark mode + accent) persists to your account instead of resetting, and the premium panel surfaces every source of premium access with per-user revoke.',
+        tags: ['React', 'Firebase', 'UX'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Settings & Visualization Polish',
+        description:
+          'Fixed hard-to-read dark-mode colors in Settings, added typed inputs and editable ages to the Visualizations projection simulators, hid the Morning Brief email card until it is actually configured, and fixed a transparent-corner artifact in the app icon.',
+        tags: ['React', 'UI', 'UX'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Cost & Process Tooling',
+        description:
+          'Scaled the backend Cloud Function to zero when idle to cut standing hosting cost, and added a set of AI-assisted development playbooks to the repo (safe-shipping workflow, a money-math correctness checklist, and changelog generation) to keep future changes safe and consistent.',
+        tags: ['DevOps', 'Cost', 'Tooling'],
+      },
+    ],
+  },
+  {
     date: 'Late June – July 2026',
     entries: [
       {
