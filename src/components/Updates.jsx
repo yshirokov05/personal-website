@@ -2,6 +2,107 @@ import './Updates.css'
 
 const updates = [
   {
+    date: 'August 2026',
+    entries: [
+      {
+        project: 'PerfinLab',
+        title: 'Apple-Inspired Redesign',
+        description:
+          'Replaced 770 hardcoded blue/indigo utility classes scattered across 41 components with a single light/dark design-token system, then rebuilt the landing page around five real questions a beginner asks (“Am I doing okay?”, “What will I owe in April?”) instead of a generic SaaS template, each answered with a live figure from the real app.',
+        tags: ['React', 'Design System', 'UI'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Frontend Decomposition, Finished',
+        description:
+          'Closed out the App.js breakup started in July: migrated the build from Create React App to Vite, then removed the remaining prop-drilling (Dashboard alone took 20 props) by moving every tab onto two React contexts, verified with a differential probe comparing every API call and rendered screen against the pre-refactor app.',
+        tags: ['React', 'Vite', 'Architecture'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Fixing the Conversion Funnel',
+        description:
+          'A non-premium user hitting the bank-connect paywall used to see a dead-end error with no way to subscribe; it now shows a real upgrade screen wired to Stripe checkout. Also shipped a shareable /demo link for the no-signup sample-data experience, made it the primary landing-page call to action, and added the analytics events needed to actually measure the funnel.',
+        tags: ['React', 'Growth', 'Stripe'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Data & Account Integrity',
+        description:
+          'Closed a gap where a manually corrected holding fixed the per-position numbers but left the account-level Total Return still dividing by Plaid’s wrong basis, turned on real step-up enforcement for the existing 2FA (a code is now required for destructive actions like a full data wipe or bank unlink), and fixed the backend never calling Plaid’s item-removal endpoint on disconnect — which had been leaving cancelled bank connections billing forever.',
+        tags: ['Python', 'Plaid API', 'Finance'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'QA Pass: Real Bugs Found by Looking',
+        description:
+          'A dedicated visual QA pass caught a $450K house counting as “Financial Services” income in the allocation chart, every expense rendering in the gain (green) color, tax totals displaying three decimal places, and Sign Out silently failing to sign anyone out — each traced to root cause and fixed rather than patched around.',
+        tags: ['Bugfix', 'QA', 'React'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'CI & Monitoring Cleanup',
+        description:
+          'Every pull request now deploys to its own preview URL so a visual change can be reviewed as a live page instead of a JSX diff, fixed a workflow bug that was reporting healthy dependency-update PRs as broken, and silenced noisy (and harmless) ETF-pricing 404s that were burying real errors in the error monitor.',
+        tags: ['DevOps', 'CI', 'Observability'],
+      },
+    ],
+  },
+  {
+    date: 'Late July 2026',
+    entries: [
+      {
+        project: 'PerfinLab',
+        title: 'Net Worth Trend, Fixed for Real',
+        description:
+          'The dashboard’s net worth trend line was quietly plotting portfolio value, so selling stock to pay down a loan — net-worth-neutral — rendered as a crash. Rebuilt it on a new daily net-worth snapshot series, then restored a long growth line via a fixed-basket historical reconstruction so a past sale can never reintroduce the cliff.',
+        tags: ['Finance', 'Python', 'Data Viz'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Security & Data-Loss Audit',
+        description:
+          'A full audit surfaced and fixed a real data-loss bug (deleting a transaction silently undid itself on the next read), a tax bug understating liability by 25–33% of insurance premiums for every user, open Firestore rules that let a client fabricate its own subscription status, and several rate-limit gaps on bank-sync endpoints.',
+        tags: ['Security', 'Python', 'Bugfix'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Manual Overrides for Bad Bank Data',
+        description:
+          'Added inline share-count correction alongside the existing cost-basis override, for the cases where Plaid just reports a position wrong and never self-corrects, then closed the follow-up gap where a corrected holding read right in the table while the account-level Total Return percentage still divided by the original wrong number.',
+        tags: ['Finance', 'Python', 'React'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'App.js Decomposition, Part 1',
+        description:
+          'Extracted the data layer out of the app’s 1,300-line, 43-hook god component into a dedicated API client and seven domain hooks, cutting App.js to 680 lines with zero direct axios calls — verified with a differential browser probe comparing every API call and rendered tab against the pre-refactor app.',
+        tags: ['React', 'Architecture', 'Refactor'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Test Coverage: 55 to 247',
+        description:
+          'Shipped the backend’s first tests beyond pure math — serializers, Plaid-to-model mapping, route auth/validation — then extended coverage to the three biggest Firestore-backed routes (net worth, portfolio save, Stripe webhook), all offline with no emulator needed. Immediately caught a real crash-on-sync bug that had been live since the backend blueprint split.',
+        tags: ['Testing', 'Python', 'Reliability'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Accessibility Pass',
+        description:
+          'WCAG AA contrast fixes and keyboard/aria support across Edit Portfolio, the legal pages, and the sign-in flow, followed by an automated audit of the landing page that found real screens rendering near-black text on a near-black background — a dark-mode class that never got attached to the pre-auth page wrapper.',
+        tags: ['a11y', 'WCAG', 'React'],
+      },
+      {
+        project: 'PerfinLab',
+        title: 'Cost-Basis Bug + Inline-Edit Fixes',
+        description:
+          'QA on the launch click-through found a new manual asset saving its cost basis 10x too high (a per-share vs. total-cost mixup); fixed the underlying form bug and made the inline-edit pencil icons on the Investments table actually visible instead of invisible until hover.',
+        tags: ['Bugfix', 'React', 'Finance'],
+      },
+    ],
+  },
+  {
     date: 'July 2026',
     entries: [
       {
