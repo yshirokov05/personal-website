@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { track } from '@vercel/analytics'
 import './Navbar.css'
 
 const links = ['About', 'Projects', 'Updates', 'Skills', 'Contact']
@@ -26,7 +27,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a href="/resume.pdf" className="navbar__resume" target="_blank" rel="noreferrer">Resume</a>
+        <a
+          href="/resume.pdf"
+          className="navbar__resume"
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => track('resume_download')}
+        >
+          Resume
+        </a>
 
         <button
           className="navbar__burger"

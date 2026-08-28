@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { track } from '@vercel/analytics'
 import './Contact.css'
 
 // Formspree form endpoint. Public by design (it lives in the form action),
@@ -34,6 +35,7 @@ export default function Contact() {
         body: JSON.stringify(form),
       })
       if (!res.ok) throw new Error('Request failed')
+      track('contact_form_sent')
       setStatus('sent')
     } catch {
       setStatus('error')
@@ -59,12 +61,22 @@ export default function Contact() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/yshirokov05" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/yshirokov05"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track('social_click', { network: 'github' })}
+                >
                   <GithubIcon /> github.com/yshirokov05
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/yury-shirokov-2a1867275/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/yury-shirokov-2a1867275/"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track('social_click', { network: 'linkedin' })}
+                >
                   <LinkedInIcon /> linkedin.com/in/yury-shirokov
                 </a>
               </li>

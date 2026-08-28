@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Updates.css'
 
 const updates = [
@@ -360,7 +361,13 @@ const updates = [
   },
 ]
 
+const VISIBLE_GROUPS = 2
+
 export default function Updates() {
+  const [expanded, setExpanded] = useState(false)
+  const visible = expanded ? updates : updates.slice(0, VISIBLE_GROUPS)
+  const hiddenCount = updates.length - VISIBLE_GROUPS
+
   return (
     <section id="updates">
       <div className="container">
@@ -368,7 +375,7 @@ export default function Updates() {
         <h2 className="section-title">Latest Developments</h2>
 
         <div className="updates__feed">
-          {updates.map(group => (
+          {visible.map(group => (
             <div key={group.date} className="updates__group">
               <div className="updates__date-header">
                 <span>{group.date}</span>
@@ -388,6 +395,17 @@ export default function Updates() {
             </div>
           ))}
         </div>
+
+        {hiddenCount > 0 && (
+          <button
+            type="button"
+            className="updates__toggle"
+            onClick={() => setExpanded(v => !v)}
+            aria-expanded={expanded}
+          >
+            {expanded ? 'Show less' : 'Show earlier updates'}
+          </button>
+        )}
       </div>
     </section>
   )
