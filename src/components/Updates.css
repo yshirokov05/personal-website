@@ -90,6 +90,24 @@
   border: 1px solid rgba(245,158,11,0.18);
 }
 
+.updates__toggle {
+  display: block;
+  margin: 32px auto 0;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.updates__toggle:hover {
+  background: rgba(245,158,11,0.16);
+  border-color: var(--accent);
+}
+
 @media (max-width: 600px) {
   .updates__group {
     grid-template-columns: 1fr;

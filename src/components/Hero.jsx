@@ -1,3 +1,4 @@
+import { track } from '@vercel/analytics'
 import './Hero.css'
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
           <a href="#contact" className="btn btn-outline">Get In Touch</a>
         </div>
         <p className="hero__flagship">
-          Flagship project: <a href="https://perfinlab.com/" target="_blank" rel="noreferrer">PerfinLab →</a>
+          Flagship project: <a href="https://perfinlab.com/" target="_blank" rel="noreferrer" onClick={() => track('perfinlab_click', { location: 'hero' })}>PerfinLab →</a>
         </p>
 
         <div className="hero__scroll-hint" aria-hidden="true">

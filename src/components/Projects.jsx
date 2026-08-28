@@ -1,9 +1,11 @@
+import { track } from '@vercel/analytics'
 import './Projects.css'
 
 const projects = [
   {
     title: 'PerfinLab',
     logo: '/perfinlab-logo.png',
+    screenshot: '/perfinlab-screenshot.png',
     description:
       'Full-stack personal finance platform with Plaid bank sync, a 50-state tax projection engine, a 0-100 financial health score, and Claude-powered AI insights — chat with live web search, morning briefs, and document extraction — on a 7-blueprint Flask/Firebase backend.',
     tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
@@ -62,28 +64,52 @@ export default function Projects() {
         <div className="projects__grid">
           {projects.map(p => (
             <article key={p.title} className="project-card">
-              <div className="project-card__top">
-                <div className="project-card__head">
-                  {p.logo && <img src={p.logo} alt="" className="project-card__logo" />}
-                  <h3 className="project-card__title">{p.title}</h3>
+              {p.screenshot && (
+                <img
+                  src={p.screenshot}
+                  alt={`${p.title} app screenshot`}
+                  className="project-card__screenshot"
+                  loading="lazy"
+                />
+              )}
+              <div className="project-card__body">
+                <div className="project-card__top">
+                  <div className="project-card__head">
+                    {p.logo && <img src={p.logo} alt="" className="project-card__logo" />}
+                    <h3 className="project-card__title">{p.title}</h3>
+                  </div>
+                  <p className="project-card__desc">{p.description}</p>
                 </div>
-                <p className="project-card__desc">{p.description}</p>
-              </div>
-              <div className="project-card__bottom">
-                <ul className="project-card__tags">
-                  {p.tags.map(t => <li key={t}>{t}</li>)}
-                </ul>
-                <div className="project-card__links">
-                  {p.repo && (
-                    <a href={p.repo} className="project-card__link" aria-label="GitHub repo" target="_blank" rel="noreferrer">
-                      <GithubIcon /> Repo
-                    </a>
-                  )}
-                  {p.link && (
-                    <a href={p.link} className="project-card__link" aria-label="Live demo" target="_blank" rel="noreferrer">
-                      <ExternalIcon /> Demo
-                    </a>
-                  )}
+                <div className="project-card__bottom">
+                  <ul className="project-card__tags">
+                    {p.tags.map(t => <li key={t}>{t}</li>)}
+                  </ul>
+                  <div className="project-card__links">
+                    {p.repo && (
+                      <a
+                        href={p.repo}
+                        className="project-card__link"
+                        aria-label="GitHub repo"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => track('project_link_click', { project: p.title, type: 'repo' })}
+                      >
+                        <GithubIcon /> Repo
+                      </a>
+                    )}
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        className="project-card__link"
+                        aria-label="Live demo"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => track('project_link_click', { project: p.title, type: 'demo' })}
+                      >
+                        <ExternalIcon /> Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </article>

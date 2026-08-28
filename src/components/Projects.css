@@ -8,16 +8,33 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 28px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
   transition: border-color 0.2s, transform 0.2s;
 }
 .project-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
+}
+
+.project-card__screenshot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card__body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 1;
 }
 
 .project-card__head {
