@@ -7,6 +7,12 @@ import './Contact.css'
 const FORMSPREE_ENDPOINT =
   import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xykrnkwz'
 
+function getMailtoHref({ name, email, message }) {
+  const subject = encodeURIComponent(`Portfolio message from ${name}`)
+  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`)
+  return `mailto:yshirokov05@gmail.com?subject=${subject}&body=${body}`
+}
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
@@ -17,15 +23,6 @@ export default function Contact() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-
-    if (!FORMSPREE_ENDPOINT) {
-      // No endpoint configured — fall back to a prefilled email so the
-      // message is never silently lost.
-      const subject = encodeURIComponent(`Portfolio message from ${form.name}`)
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
-      window.location.href = `mailto:yshirokov05@gmail.com?subject=${subject}&body=${body}`
-      return
-    }
 
     setStatus('sending')
     try {
@@ -83,9 +80,9 @@ export default function Contact() {
             </ul>
           </div>
 
-          <form className="contact__form" onSubmit={handleSubmit}>
+          <form className="contact__form" onSubmit={handleSubmit} aria-busy={status === 'sending'}>
             {status === 'sent' ? (
-              <div className="contact__success">
+              <div className="contact__success" role="status" aria-live="polite">
                 Message sent! I'll be in touch soon.
               </div>
             ) : (
@@ -95,6 +92,7 @@ export default function Contact() {
                   <input
                     id="name" name="name" type="text"
                     placeholder="Your name"
+                    autoComplete="name"
                     value={form.name} onChange={handleChange} required
                   />
                 </div>
@@ -103,6 +101,7 @@ export default function Contact() {
                   <input
                     id="email" name="email" type="email"
                     placeholder="your@email.com"
+                    autoComplete="email"
                     value={form.email} onChange={handleChange} required
                   />
                 </div>
@@ -115,9 +114,9 @@ export default function Contact() {
                   />
                 </div>
                 {status === 'error' && (
-                  <p className="contact__error">
+                  <p className="contact__error" id="contact-error" role="alert">
                     Something went wrong sending your message. Please email me directly at{' '}
-                    <a href="mailto:yshirokov05@gmail.com">yshirokov05@gmail.com</a>.
+                    <a href={getMailtoHref(form)}>open a prefilled email draft</a>.
                   </p>
                 )}
                 <button

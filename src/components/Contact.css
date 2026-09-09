@@ -62,6 +62,11 @@
 .contact__field textarea:focus {
   border-color: var(--accent);
 }
+.contact__field input:focus-visible,
+.contact__field textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .contact__field input::placeholder,
 .contact__field textarea::placeholder {
   color: var(--text-muted);

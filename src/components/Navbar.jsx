@@ -10,16 +10,28 @@ export default function Navbar() {
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40)
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
     window.addEventListener('scroll', handler)
-    return () => window.removeEventListener('scroll', handler)
+    window.addEventListener('keydown', closeOnEscape)
+
+    return () => {
+      window.removeEventListener('scroll', handler)
+      window.removeEventListener('keydown', closeOnEscape)
+    }
   }, [])
 
   return (
-    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
+    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} aria-label="Primary">
       <div className="navbar__inner container">
         <a href="#hero" className="navbar__logo">YS<span>.</span></a>
 
-        <ul className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}>
+        <ul
+          id="primary-navigation"
+          className={`navbar__links${menuOpen ? ' navbar__links--open' : ''}`}
+        >
           {links.map(l => (
             <li key={l}>
               <a href={`#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{l}</a>
@@ -39,7 +51,10 @@ export default function Navbar() {
 
         <button
           className="navbar__burger"
-          aria-label="Toggle menu"
+          type="button"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
           onClick={() => setMenuOpen(o => !o)}
         >
           <span /><span /><span />

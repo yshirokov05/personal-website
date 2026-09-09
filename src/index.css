@@ -30,6 +30,7 @@ img { display: block; max-width: 100%; }
 
 section {
   padding: 96px 24px;
+  scroll-margin-top: 88px;
 }
 
 .container {
@@ -77,3 +78,20 @@ section {
   border: 1.5px solid var(--border);
 }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+.btn:focus-visible,
+.contact__field input:focus-visible,
+.contact__field textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -61,11 +61,15 @@
 .navbar__burger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
 }
 .navbar__burger span {
   display: block;
@@ -76,6 +80,13 @@
   transition: background 0.2s;
 }
 .navbar__burger:hover span { background: var(--accent); }
+
+.navbar__links a:focus-visible,
+.navbar__resume:focus-visible,
+.navbar__burger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 
 @media (max-width: 640px) {
   .navbar__burger { display: flex; }

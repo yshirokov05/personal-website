@@ -64,14 +64,20 @@ export default function Projects() {
         <div className="projects__grid">
           {projects.map(p => (
             <article key={p.title} className="project-card">
-              {p.screenshot && (
-                <img
-                  src={p.screenshot}
-                  alt={`${p.title} app screenshot`}
-                  className="project-card__screenshot"
-                  loading="lazy"
-                />
-              )}
+              <div className="project-card__media">
+                {p.screenshot ? (
+                  <img
+                    src={p.screenshot}
+                    alt={`${p.title} app screenshot`}
+                    className="project-card__screenshot"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="project-card__placeholder" aria-hidden="true">
+                    <span>{p.title}</span>
+                  </div>
+                )}
+              </div>
               <div className="project-card__body">
                 <div className="project-card__top">
                   <div className="project-card__head">
@@ -89,7 +95,7 @@ export default function Projects() {
                       <a
                         href={p.repo}
                         className="project-card__link"
-                        aria-label="GitHub repo"
+                        aria-label={`${p.title} GitHub repository`}
                         target="_blank"
                         rel="noreferrer"
                         onClick={() => track('project_link_click', { project: p.title, type: 'repo' })}
@@ -101,7 +107,7 @@ export default function Projects() {
                       <a
                         href={p.link}
                         className="project-card__link"
-                        aria-label="Live demo"
+                        aria-label={`${p.title} live demo`}
                         target="_blank"
                         rel="noreferrer"
                         onClick={() => track('project_link_click', { project: p.title, type: 'demo' })}

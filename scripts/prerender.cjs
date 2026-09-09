@@ -10,9 +10,8 @@
 // meaningful. React's createRoot replaces it on mount, so the live site is
 // unchanged for real visitors.
 //
-// HARD RULE: this script must NEVER fail the production build. Every step is
-// wrapped; on any error we log and exit 0, leaving the pre-prerender SPA
-// behavior intact.
+// The prerender is part of the production build. If it cannot inject the
+// crawlable content, fail loudly rather than shipping a misleading green build.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const fs = require('fs');
@@ -23,25 +22,17 @@ function main() {
   const templatePath = path.join(distDir, 'index.html');
 
   if (!fs.existsSync(templatePath)) {
-    console.warn('[prerender] dist/index.html not found — skipping (did the build run?)');
-    return;
+    throw new Error('dist/index.html not found — did the Vite build run?');
   }
 
-  let content;
-  try {
-    content = require('./site-content.cjs');
-  } catch (e) {
-    console.warn('[prerender] could not load site-content.js — skipping:', e.message);
-    return;
-  }
+  const content = require('./site-content.cjs');
 
   const html = fs.readFileSync(templatePath, 'utf8');
   const body = buildBody(content);
   const injected = html.replace(/(<div id=["']root["']>)\s*(<\/div>)/i, `$1${body}$2`);
 
   if (injected === html) {
-    console.warn('[prerender] could not find <div id="root"></div> — skipping injection.');
-    return;
+    throw new Error('could not find <div id="root"></div> for prerender injection');
   }
 
   fs.writeFileSync(templatePath, injected, 'utf8');
@@ -82,6 +73,6 @@ function buildBody({ projects, skills }) {
 try {
   main();
 } catch (e) {
-  console.warn('[prerender] unexpected error, skipping prerender:', e && e.message);
+  console.error('[prerender] failed:', e && e.message);
+  process.exitCode = 1;
 }
-process.exit(0);

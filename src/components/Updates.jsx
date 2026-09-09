@@ -361,7 +361,7 @@ const updates = [
   },
 ]
 
-const VISIBLE_GROUPS = 2
+const VISIBLE_GROUPS = 1
 
 export default function Updates() {
   const [expanded, setExpanded] = useState(false)

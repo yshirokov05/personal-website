@@ -18,14 +18,34 @@
   transform: translateY(-4px);
 }
 
+.project-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
 .project-card__screenshot {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
   object-position: top;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+}
+
+.project-card__placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(245,158,11,0.2), transparent 45%),
+    linear-gradient(135deg, var(--bg-surface), var(--bg));
+  color: var(--accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .project-card__body {
