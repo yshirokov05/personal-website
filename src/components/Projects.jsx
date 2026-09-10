@@ -9,14 +9,17 @@ const projects = [
     description:
       'Full-stack personal finance platform with Plaid bank sync, a 50-state tax projection engine, a 0-100 financial health score, and Claude-powered AI insights — chat with live web search, morning briefs, and document extraction — on a 7-blueprint Flask/Firebase backend.',
     tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
+    highlights: ['50-state tax engine', '0–100 health score', 'Live bank sync'],
     link: 'https://perfinlab.com/',
     repo: 'https://github.com/yshirokov05/perfinlab',
+    featured: true,
   },
   {
     title: 'Vanguard RL',
     description:
       'Multiplayer game AI agent with a cross-process C# ↔ PyTorch bridge over UDP at 10Hz, a ResNet-18 + 14D fusion model, and an 8-way parallel bot swarm achieving 200 SPS over 1.6M+ timesteps.',
     tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
+    highlights: ['10 Hz bridge', '8 parallel bots', '1.6M+ timesteps'],
     link: null,
     repo: 'https://github.com/yshirokov05/rust-rl-agent',
   },
@@ -25,6 +28,7 @@ const projects = [
     description:
       'Hybrid options trading engine with a decoupled FastAPI backend, React telemetry dashboard, vectorized TA engine (EMAs, Bollinger Bands) in sub-millisecond ranges, and a PPO agent trained on QQQ options.',
     tags: ['Python', 'FastAPI', 'React', 'PyTorch'],
+    highlights: ['Sub-ms indicators', 'PPO agent', 'Live telemetry'],
     link: null,
     repo: 'https://github.com/yshirokov05/trading-bot-etrade',
   },
@@ -33,6 +37,7 @@ const projects = [
     description:
       'Analyzed 12M+ rows of Google Analytics data in BigQuery to build a multi-stage conversion funnel, identified a 15% mobile checkout drop-off, and validated a 5% lift via A/B test with two-proportion Z-tests.',
     tags: ['Python', 'BigQuery', 'SQL', 'Pandas'],
+    highlights: ['12M+ rows', '15% drop-off found', '5% lift validated'],
     link: null,
     repo: 'https://github.com/yshirokov05/product-analytics-case-study',
   },
@@ -60,10 +65,15 @@ export default function Projects() {
       <div className="container">
         <p className="section-label">What I've built</p>
         <h2 className="section-title">Projects</h2>
+        <p className="projects__intro">
+          Selected work spanning consumer finance, machine learning, and product analytics.
+          Each project began with a concrete problem and was built through implementation,
+          measurement, and iteration.
+        </p>
 
         <div className="projects__grid">
           {projects.map(p => (
-            <article key={p.title} className="project-card">
+            <article key={p.title} className={`project-card${p.featured ? ' project-card--featured' : ''}`}>
               <div className="project-card__media">
                 {p.screenshot ? (
                   <img
@@ -73,8 +83,11 @@ export default function Projects() {
                     loading="lazy"
                   />
                 ) : (
-                  <div className="project-card__placeholder" aria-hidden="true">
-                    <span>{p.title}</span>
+                  <div className="project-card__signal">
+                    <span className="project-card__signal-label">Project signals</span>
+                    <ul aria-label={`${p.title} selected results`}>
+                      {p.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
+                    </ul>
                   </div>
                 )}
               </div>
@@ -82,9 +95,17 @@ export default function Projects() {
                 <div className="project-card__top">
                   <div className="project-card__head">
                     {p.logo && <img src={p.logo} alt="" className="project-card__logo" />}
-                    <h3 className="project-card__title">{p.title}</h3>
+                    <div>
+                      {p.featured && <span className="project-card__eyebrow">Flagship case study</span>}
+                      <h3 className="project-card__title">{p.title}</h3>
+                    </div>
                   </div>
                   <p className="project-card__desc">{p.description}</p>
+                  {p.featured && (
+                    <ul className="project-card__highlights" aria-label="PerfinLab selected capabilities">
+                      {p.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
+                    </ul>
+                  )}
                 </div>
                 <div className="project-card__bottom">
                   <ul className="project-card__tags">
@@ -100,7 +121,7 @@ export default function Projects() {
                         rel="noreferrer"
                         onClick={() => track('project_link_click', { project: p.title, type: 'repo' })}
                       >
-                        <GithubIcon /> Repo
+                        <GithubIcon /> View code
                       </a>
                     )}
                     {p.link && (
@@ -112,7 +133,7 @@ export default function Projects() {
                         rel="noreferrer"
                         onClick={() => track('project_link_click', { project: p.title, type: 'demo' })}
                       >
-                        <ExternalIcon /> Demo
+                        <ExternalIcon /> Visit product
                       </a>
                     )}
                   </div>
