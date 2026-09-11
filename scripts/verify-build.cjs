@@ -12,7 +12,13 @@ if (!fs.existsSync(htmlPath)) {
 }
 
 const html = fs.readFileSync(htmlPath, 'utf8');
-const requiredContent = ['Yury Shirokov', 'Projects', 'PerfinLab', 'Contact'];
+const requiredContent = [
+  'Yury Shirokov',
+  'UC Berkeley senior building AI-powered finance and data products',
+  'Projects',
+  'PerfinLab',
+  'Contact',
+];
 const missingContent = requiredContent.filter(value => !html.includes(value));
 
 if (missingContent.length > 0) {

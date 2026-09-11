@@ -51,7 +51,7 @@ function buildBody({ projects, skills }) {
   const parts = [];
   parts.push('<main style="max-width:720px;margin:0 auto;padding:24px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">');
   parts.push('<h1>Yury Shirokov</h1>');
-  parts.push('<p>Economics @ UC Berkeley &middot; Developer. I build full-stack web apps, trading tools, and AI-powered systems.</p>');
+  parts.push('<p>UC Berkeley senior building AI-powered finance and data products. I turn complex financial and behavioral data into useful software.</p>');
 
   parts.push('<h2>Projects</h2>');
   parts.push('<ul>');

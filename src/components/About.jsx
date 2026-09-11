@@ -1,8 +1,8 @@
 import './About.css'
 
 const facts = [
-  { label: 'Based in', value: 'San Jose / Los Gatos, CA' },
-  { label: 'Currently', value: 'Studying Economics @ UC Berkeley' },
+  { label: 'Based in', value: 'San Jose, CA' },
+  { label: 'Education', value: 'Economics @ UC Berkeley' },
   { label: 'Work', value: 'Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
@@ -17,21 +17,15 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I am a rising senior undergraduate student at the University of California, Berkeley
-              majoring in Economics and minoring in Data Science. I am based in the San Jose /
-              Los Gatos area. My background is in full-stack development, machine learning, and
-              algorithmic trading. I have a bit of a case of perfectionism which prohibits me
-              from settling for things that are good enough.
+              I’m a UC Berkeley senior studying Economics with a minor in Data Science. I build
+              products at the intersection of finance, data, and AI, with hands-on experience in
+              full-stack development, machine learning, analytics, and algorithmic trading.
             </p>
             <p>
-              Outside of thinking about solutions to problems, I enjoy partaking in the lovely
-              worldly offerings that the South Bay offers. I spend a good deal of time taking
-              care of my body and mind — I have been training Jiu-Jitsu for over 8 years and
-              weightlifting for over 7 years. I strongly believe in staying in motion. To clear
-              my head I enjoy hiking and running.
-            </p>
-            <p>
-              Some of my other interests include: culinary, automotives, and gaming.
+              Outside of technology, I work as a personal trainer and have trained Brazilian
+              Jiu-Jitsu for more than eight years. I also enjoy strength training, hiking,
+              cooking, cars, and games. The same habits shape both sides of my work: stay curious,
+              test what matters, and keep improving the system.
             </p>
             <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
               Let's Talk
@@ -39,9 +33,7 @@ export default function About() {
           </div>
 
           <div className="about__sidebar">
-            <div className="about__avatar">
-              <div className="about__avatar-placeholder">YS</div>
-            </div>
+            <p className="about__sidebar-title">Quick profile</p>
             <ul className="about__facts">
               {facts.map(f => (
                 <li key={f.label}>
