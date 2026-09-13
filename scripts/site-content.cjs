@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'Vanguard RL',
     description:
-      'Multiplayer game AI agent with a cross-process C# ↔ PyTorch bridge over UDP at 10Hz, a ResNet-18 + 14D fusion model, and an 8-way parallel bot swarm achieving 200 SPS over 1.6M+ timesteps.',
+      'Private-server Rust reinforcement-learning prototype connecting a Carbon C# plugin to a Gymnasium/Stable-Baselines3 PPO environment through a versioned atomic JSON bridge. The one-bot MVP adds exact action acknowledgments, deterministic resets, bot-local resource telemetry, and automated smoke gates before live wood-gather training.',
   },
   {
     title: 'Quantbot',
