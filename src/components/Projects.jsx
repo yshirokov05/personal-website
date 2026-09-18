@@ -7,17 +7,18 @@ const projects = [
     logo: '/perfinlab-logo.png',
     screenshot: '/perfinlab-screenshot.png',
     description:
-      'Full-stack personal finance platform with Plaid bank sync, a 50-state tax projection engine, a 0-100 financial health score, and Claude-powered AI insights — chat with live web search, morning briefs, and document extraction — on a 7-blueprint Flask/Firebase backend.',
+      'Built a full-stack personal finance app that turns linked account data into cash-flow, tax, and financial-health guidance. It combines Plaid sync, 50-state tax projections, and AI-assisted analysis on a Flask/Firebase backend.',
     tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
     highlights: ['50-state tax engine', '0–100 health score', 'Live bank sync'],
     link: 'https://perfinlab.com/',
-    repo: 'https://github.com/yshirokov05/perfinlab',
+    repo: null,
+    privateRepo: true,
     featured: true,
   },
   {
     title: 'Vanguard RL',
     description:
-      'Private-server Rust reinforcement-learning prototype connecting a Carbon C# plugin to a Gymnasium/Stable-Baselines3 PPO environment through a versioned atomic JSON bridge. The one-bot MVP adds exact action acknowledgments, deterministic resets, bot-local resource telemetry, and automated smoke gates before live wood-gather training.',
+      'Built a reinforcement-learning prototype that connects a Rust game server to a Gymnasium/PPO training loop through a versioned JSON bridge. Deterministic resets, action acknowledgments, and automated smoke tests make experiments reproducible.',
     tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
     highlights: ['Atomic JSON bridge', 'One-bot MVP', '13 passing tests'],
     link: null,
@@ -26,16 +27,17 @@ const projects = [
   {
     title: 'Quantbot',
     description:
-      'Hybrid options trading engine with a decoupled FastAPI backend, React telemetry dashboard, vectorized TA engine (EMAs, Bollinger Bands) in sub-millisecond ranges, and a PPO agent trained on QQQ options.',
+      'Built an options-research engine with a FastAPI backend, React telemetry dashboard, vectorized technical indicators, and a PPO policy trained on QQQ options data.',
     tags: ['Python', 'FastAPI', 'React', 'PyTorch'],
     highlights: ['Sub-ms indicators', 'PPO agent', 'Live telemetry'],
     link: null,
-    repo: 'https://github.com/yshirokov05/trading-bot-etrade',
+    repo: null,
+    privateRepo: true,
   },
   {
     title: 'E-commerce Funnel Analytics',
     description:
-      'Analyzed 12M+ rows of Google Analytics data in BigQuery to build a multi-stage conversion funnel, identified a 15% mobile checkout drop-off, and validated a 5% lift via A/B test with two-proportion Z-tests.',
+      'Analyzed 12M+ Google Analytics rows in BigQuery, identified a 15% mobile checkout drop-off, and validated a 5% conversion lift with a two-proportion z-test.',
     tags: ['Python', 'BigQuery', 'SQL', 'Pandas'],
     highlights: ['12M+ rows', '15% drop-off found', '5% lift validated'],
     link: null,
@@ -123,6 +125,9 @@ export default function Projects() {
                       >
                         <GithubIcon /> View code
                       </a>
+                    )}
+                    {p.privateRepo && (
+                      <span className="project-card__private">Private codebase</span>
                     )}
                     {p.link && (
                       <a

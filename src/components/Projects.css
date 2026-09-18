@@ -161,6 +161,12 @@
   transition: color 0.2s;
 }
 .project-card__link:hover { color: var(--accent); }
+.project-card__private {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
 
 @media (max-width: 760px) {
   .project-card.project-card--featured { grid-template-columns: 1fr; }

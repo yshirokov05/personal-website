@@ -14,22 +14,22 @@ const projects = [
   {
     title: 'PerfinLab',
     description:
-      'Full-stack personal finance platform with Plaid bank sync, a 50-state tax projection engine, a 0-100 financial health score, and Claude-powered AI insights — chat with live web search, morning briefs, and document extraction — on a 7-blueprint Flask/Firebase backend.',
+      'Built a full-stack personal finance app that turns linked account data into cash-flow, tax, and financial-health guidance. It combines Plaid sync, 50-state tax projections, and AI-assisted analysis on a Flask/Firebase backend.',
   },
   {
     title: 'Vanguard RL',
     description:
-      'Private-server Rust reinforcement-learning prototype connecting a Carbon C# plugin to a Gymnasium/Stable-Baselines3 PPO environment through a versioned atomic JSON bridge. The one-bot MVP adds exact action acknowledgments, deterministic resets, bot-local resource telemetry, and automated smoke gates before live wood-gather training.',
+      'Built a reinforcement-learning prototype that connects a Rust game server to a Gymnasium/PPO training loop through a versioned JSON bridge. Deterministic resets, action acknowledgments, and automated smoke tests make experiments reproducible.',
   },
   {
     title: 'Quantbot',
     description:
-      'Hybrid options trading engine with a decoupled FastAPI backend, React telemetry dashboard, vectorized TA engine (EMAs, Bollinger Bands) in sub-millisecond ranges, and a PPO agent trained on QQQ options.',
+      'Built an options-research engine with a FastAPI backend, React telemetry dashboard, vectorized technical indicators, and a PPO policy trained on QQQ options data.',
   },
   {
     title: 'E-commerce Funnel Analytics',
     description:
-      'Analyzed 12M+ rows of Google Analytics data in BigQuery to build a multi-stage conversion funnel, identified a 15% mobile checkout drop-off, and validated a 5% lift via A/B test with two-proportion Z-tests.',
+      'Analyzed 12M+ Google Analytics rows in BigQuery, identified a 15% mobile checkout drop-off, and validated a 5% conversion lift with a two-proportion z-test.',
   },
 ];
 
