@@ -67,11 +67,11 @@ export default function Updates() {
 
         <a
           className="updates__history"
-          href="https://github.com/yshirokov05/perfinlab/commits/main/"
+          href="https://perfinlab.com/"
           target="_blank"
           rel="noreferrer"
         >
-          Explore the full build history on GitHub <span aria-hidden="true">↗</span>
+          See PerfinLab in action <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>

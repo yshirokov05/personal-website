@@ -18,7 +18,15 @@ export default function Hero() {
           <p className="hero__availability">Open to software, data, and product opportunities.</p>
           <div className="hero__cta">
             <a href="#projects" className="btn btn-primary">View selected work</a>
-            <a href="#contact" className="btn btn-outline">Get in touch</a>
+            <a
+              href="/resume.pdf"
+              className="btn btn-outline"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => track('resume_click', { location: 'hero' })}
+            >
+              View résumé
+            </a>
           </div>
         </div>
 

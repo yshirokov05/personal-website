@@ -2,7 +2,7 @@ import './About.css'
 
 const facts = [
   { label: 'Based in', value: 'San Jose, CA' },
-  { label: 'Education', value: 'Economics @ UC Berkeley' },
+  { label: 'Education', value: 'Economics · Data Science minor @ UC Berkeley' },
   { label: 'Work', value: 'Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
