@@ -24,12 +24,12 @@ const projects = [
   {
     title: 'Quantbot',
     description:
-      'Built an options-research engine with a FastAPI backend, React telemetry dashboard, vectorized technical indicators, and a PPO policy trained on QQQ options data.',
+      'Built an options-first paper-trading system: deterministic indicators screen closed 3-minute candles against a 15-minute trend, then Claude reviews actionable setups and selects a liquid call or put. A FastAPI backend and React dashboard expose scans, positions, trade history, and risk controls.',
   },
   {
     title: 'E-commerce Funnel Analytics',
     description:
-      'Analyzed 12M+ Google Analytics rows in BigQuery, identified a 15% mobile checkout drop-off, and validated a 5% conversion lift with a two-proportion z-test.',
+      'Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built session-level funnel and engagement metrics, and compared conversion behavior by device. The largest funnel drop-off was from product view to add-to-cart.',
   },
 ];
 
