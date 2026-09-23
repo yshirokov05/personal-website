@@ -6,7 +6,7 @@
 // This is a Vite SPA: the shipped dist/index.html has an empty <div id="root">
 // until the JS bundle runs, so crawlers and link unfurlers see no content.
 // This script bakes real, crawlable body copy into that div (name, bio,
-// projects, skills, contact) so search engines and previews see something
+// case study, projects, skills, contact) so search engines and previews see something
 // meaningful. React's createRoot replaces it on mount, so the live site is
 // unchanged for real visitors.
 //
@@ -47,11 +47,17 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
-function buildBody({ projects, skills }) {
+function buildBody({ hero, caseStudy, projects, skills }) {
   const parts = [];
   parts.push('<main style="max-width:720px;margin:0 auto;padding:24px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">');
   parts.push('<h1>Yury Shirokov</h1>');
-  parts.push('<p>UC Berkeley senior building AI-powered finance and data products. I turn complex financial and behavioral data into useful software.</p>');
+  parts.push(`<p>${esc(hero)}</p>`);
+
+  parts.push('<h2>Selected case study</h2>');
+  parts.push(`<p><strong>${esc(caseStudy.title)}</strong></p>`);
+  parts.push(`<p><strong>Problem:</strong> ${esc(caseStudy.problem)}</p>`);
+  parts.push(`<p><strong>Change:</strong> ${esc(caseStudy.change)}</p>`);
+  parts.push(`<p><strong>Result:</strong> ${esc(caseStudy.result)}</p>`);
 
   parts.push('<h2>Projects</h2>');
   parts.push('<ul>');

@@ -1,68 +1,39 @@
 import './Updates.css'
 
-const updates = [
-  {
-    title: 'Rebuilt the product around real user questions',
-    problem: 'The landing page looked like a generic SaaS template and the interface carried hundreds of hardcoded color utilities.',
-    change: 'Introduced a shared light/dark token system and reorganized the experience around five questions a new user actually asks.',
-    result: 'A clearer product story and one maintainable visual system across 41 components.',
-    tags: ['Product', 'React', 'Design System'],
-  },
-  {
-    title: 'Removed a dead end in the upgrade funnel',
-    problem: 'Users who reached bank connect without premium access saw an error but had no path forward.',
-    change: 'Added a real upgrade screen, connected it to Stripe checkout, and made the no-signup demo shareable.',
-    result: 'Every blocked user now has a clear next action, with analytics events to measure conversion.',
-    tags: ['Growth', 'Stripe', 'Analytics'],
-  },
-  {
-    title: 'Finished the frontend architecture overhaul',
-    problem: 'Core screens depended on heavy prop-drilling, including a Dashboard receiving 20 props.',
-    change: 'Migrated to Vite and moved each tab onto two focused React contexts.',
-    result: 'A smaller, easier-to-change application verified against the pre-refactor behavior.',
-    tags: ['Architecture', 'Vite', 'React'],
-  },
-  {
-    title: 'Hardened account and financial-data integrity',
-    problem: 'Corrected holdings could still leave account-level returns wrong, and sensitive actions lacked enforced step-up verification.',
-    change: 'Fixed return aggregation, enforced 2FA for destructive actions, and completed Plaid item removal on disconnect.',
-    result: 'More trustworthy calculations, safer account controls, and no lingering disconnected-bank billing.',
-    tags: ['Finance', 'Security', 'Plaid API'],
-  },
-  {
-    title: 'Turned visual QA into production fixes',
-    problem: 'A focused review found category, color, precision, and sign-out bugs that automated checks had missed.',
-    change: 'Traced each issue to its source and fixed the underlying data or UI behavior.',
-    result: 'Corrected allocation, expense, tax, and authentication experiences across the product.',
-    tags: ['QA', 'Bugfix', 'Accessibility'],
-  },
-]
+const caseStudy = {
+  title: 'Safer portfolio edits at PerfinLab',
+  problem:
+    'Guests shared one demo portfolio, so an anonymous save could alter its sample data. Manual cash, savings, checking, and housing values could also be saved blank, zero, or negative.',
+  change:
+    'Made the guest demo read-only, required sign-in for portfolio writes, and added validation before manual values can be saved.',
+  result:
+    'Confirmed the validation in production with a synthetic QA entry. An isolated browser harness verified persistence after reload and stale-save conflict handling.',
+  tags: ['Access Control', 'Validation', 'QA'],
+}
 
 export default function Updates() {
   return (
     <section id="updates">
       <div className="container">
-        <p className="section-label">Build log</p>
+        <p className="section-label">Selected case study</p>
         <h2 className="section-title">Recent product work</h2>
         <p className="updates__intro">
-          A concise look at the problems I found, the changes I shipped, and what improved.
+          A recent PerfinLab improvement to protect shared demo data and make portfolio edits more reliable.
         </p>
 
         <div className="updates__feed">
-          {updates.map(update => (
-            <article key={update.title} className="update-item">
-              <span className="update-item__project">PerfinLab · August 2026</span>
-              <h3 className="update-item__title">{update.title}</h3>
-              <dl className="update-item__story">
-                <div><dt>Problem</dt><dd>{update.problem}</dd></div>
-                <div><dt>Change</dt><dd>{update.change}</dd></div>
-                <div><dt>Result</dt><dd>{update.result}</dd></div>
-              </dl>
-              <ul className="update-item__tags">
-                {update.tags.map(tag => <li key={tag}>{tag}</li>)}
-              </ul>
-            </article>
-          ))}
+          <article className="update-item">
+            <span className="update-item__project">PerfinLab · September 2026</span>
+            <h3 className="update-item__title">{caseStudy.title}</h3>
+            <dl className="update-item__story">
+              <div><dt>Problem</dt><dd>{caseStudy.problem}</dd></div>
+              <div><dt>Change</dt><dd>{caseStudy.change}</dd></div>
+              <div><dt>Result</dt><dd>{caseStudy.result}</dd></div>
+            </dl>
+            <ul className="update-item__tags">
+              {caseStudy.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+          </article>
         </div>
 
         <a

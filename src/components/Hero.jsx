@@ -6,16 +6,16 @@ export default function Hero() {
     <section id="hero" className="hero">
       <div className="hero__inner container">
         <div className="hero__copy">
-          <p className="section-label">Economics + data + software</p>
+          <p className="section-label">Economics · Product and data analytics</p>
           <h1 className="hero__name">Yury Shirokov</h1>
           <h2 className="hero__title">
-            UC Berkeley senior building <span>AI-powered finance and data products.</span>
+            UC Berkeley Economics student focused on <span>product and data analytics.</span>
           </h2>
           <p className="hero__bio">
-            I turn complex financial and behavioral data into useful products,
-            from consumer finance software to machine-learning systems.
+            I apply economic reasoning and hands-on analytics to answer product questions
+            and build useful financial tools.
           </p>
-          <p className="hero__availability">Open to software, data, and product opportunities.</p>
+          <p className="hero__availability">Seeking Product Analyst, Data Analyst, and Business Analyst roles.</p>
           <div className="hero__cta">
             <a href="#projects" className="btn btn-primary">View selected work</a>
             <a

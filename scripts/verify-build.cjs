@@ -14,7 +14,10 @@ if (!fs.existsSync(htmlPath)) {
 const html = fs.readFileSync(htmlPath, 'utf8');
 const requiredContent = [
   'Yury Shirokov',
-  'UC Berkeley senior building AI-powered finance and data products',
+  'UC Berkeley Economics student focused on product and data analytics',
+  'Seeking Product Analyst, Data Analyst, and Business Analyst roles',
+  'Safer portfolio edits at PerfinLab',
+  'stale-save conflict handling',
   'Projects',
   'PerfinLab',
   'Contact',
