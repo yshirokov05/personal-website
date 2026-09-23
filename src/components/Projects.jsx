@@ -27,9 +27,9 @@ const projects = [
   {
     title: 'Quantbot',
     description:
-      'Built an options-research engine with a FastAPI backend, React telemetry dashboard, vectorized technical indicators, and a PPO policy trained on QQQ options data.',
-    tags: ['Python', 'FastAPI', 'React', 'PyTorch'],
-    highlights: ['Sub-ms indicators', 'PPO agent', 'Live telemetry'],
+      'Built an options-first paper-trading system: deterministic indicators screen closed 3-minute candles against a 15-minute trend, then Claude reviews actionable setups and selects a liquid call or put. A FastAPI backend and React dashboard expose scans, positions, trade history, and risk controls.',
+    tags: ['Python', 'FastAPI', 'React', 'Claude API'],
+    highlights: ['Indicator-based screening', 'Claude-reviewed setups', 'Paper trading with risk limits'],
     link: null,
     repo: null,
     privateRepo: true,
@@ -37,9 +37,9 @@ const projects = [
   {
     title: 'E-commerce Funnel Analytics',
     description:
-      'Analyzed 12M+ Google Analytics rows in BigQuery, identified a 15% mobile checkout drop-off, and validated a 5% conversion lift with a two-proportion z-test.',
+      'Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built session-level funnel and engagement metrics, and compared conversion behavior by device. The largest funnel drop-off was from product view to add-to-cart.',
     tags: ['Python', 'BigQuery', 'SQL', 'Pandas'],
-    highlights: ['12M+ rows', '15% drop-off found', '5% lift validated'],
+    highlights: ['12M+ hit-level records', 'Session-level funnel', 'Device segmentation'],
     link: null,
     repo: 'https://github.com/yshirokov05/product-analytics-case-study',
   },

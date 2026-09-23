@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/yshirokov05/personal-website/actions/workflows/ci.yml/badge.svg)](https://github.com/yshirokov05/personal-website/actions/workflows/ci.yml)
 
-Personal portfolio for Yury Shirokov, a UC Berkeley Economics and Data Science student building products across finance, AI, and analytics.
+Personal portfolio for Yury Shirokov, a current UC Berkeley Economics student with a minor in Data Science, building products across finance, AI, and analytics.
 
 **Live site:** [yuryshirokov.vercel.app](https://yuryshirokov.vercel.app/)
 
