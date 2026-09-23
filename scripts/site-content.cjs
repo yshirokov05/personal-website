@@ -1,14 +1,26 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Source of truth for the crawlable body copy baked in by scripts/prerender.js.
+// Source of truth for the crawlable body copy baked in by scripts/prerender.cjs.
 //
 // This is a single-page site (one URL, anchor-linked sections), so unlike a
-// multi-route SEO table this just lists the real content once. Keep it in
-// sync with src/components/{Projects,Skills}.jsx when those change — it's a
-// duplicate by necessity (the build step can't execute JSX), not a second
-// source of truth to maintain new features in.
+// multi-route SEO table this lists the hero, case study, projects, and skills.
+// Keep it in sync with src/components/{Hero,Updates,Projects,Skills}.jsx —
+// it's duplicated because the build step can't execute JSX.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const SITE = 'https://yuryshirokov.vercel.app';
+
+const hero =
+  'UC Berkeley Economics student focused on product and data analytics. I apply economic reasoning and hands-on analytics to answer product questions and build useful financial tools. Seeking Product Analyst, Data Analyst, and Business Analyst roles.';
+
+const caseStudy = {
+  title: 'Safer portfolio edits at PerfinLab',
+  problem:
+    'Guests shared one demo portfolio, so an anonymous save could alter its sample data. Manual cash, savings, checking, and housing values could also be saved blank, zero, or negative.',
+  change:
+    'Made the guest demo read-only, required sign-in for portfolio writes, and added validation before manual values can be saved.',
+  result:
+    'Confirmed the validation in production with a synthetic QA entry. An isolated browser harness verified persistence after reload and stale-save conflict handling.',
+};
 
 const projects = [
   {
@@ -38,4 +50,4 @@ const skills = [
   'Firebase', 'BigQuery', 'PyTorch', 'Claude API', 'Plaid API', 'Stripe',
 ];
 
-module.exports = { SITE, projects, skills };
+module.exports = { SITE, hero, caseStudy, projects, skills };
