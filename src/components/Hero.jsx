@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="hero__copy">
           <h1 className="hero__name">Yury Shirokov</h1>
           <h2 className="hero__title">
-            Economics student at <span>UC Berkeley.</span>
+            Economics &amp; Data Science <span>- UC Berkeley</span>
           </h2>
           <p className="hero__bio">
             I build software and work on data projects, mostly in finance.

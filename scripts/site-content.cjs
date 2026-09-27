@@ -10,7 +10,7 @@
 const SITE = 'https://yuryshirokov.vercel.app';
 
 const hero =
-  'Economics student at UC Berkeley. I build software and work on data projects, mostly in finance.';
+  'Economics & Data Science - UC Berkeley. I build software and work on data projects, mostly in finance.';
 
 const caseStudy = {
   title: 'Safer portfolio edits at PerfinLab',

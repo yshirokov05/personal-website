@@ -2,7 +2,7 @@ import './About.css'
 
 const facts = [
   { label: 'Based in', value: 'San Jose, CA' },
-  { label: 'Education', value: 'Economics at UC Berkeley' },
+  { label: 'Education', value: 'Economics & Data Science · UC Berkeley' },
   { label: 'Work', value: 'Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
@@ -17,12 +17,14 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I’m studying Economics at UC Berkeley. Outside of class, I build PerfinLab and work
-              on a few data and software projects.
+              I’m a senior at UC Berkeley studying Economics and Data Science. I build things to
+              solve problems I run into myself, and I hope they help other people too. PerfinLab
+              is one of those projects. I have a hard time settling for “good enough.”
             </p>
             <p>
-              I also work as a personal trainer and have trained Brazilian Jiu-Jitsu for more than
-              eight years. I enjoy lifting, hiking, cooking, cars, and games.
+              Outside of class, I work as a personal trainer and have trained Brazilian Jiu-Jitsu
+              for over eight years. I lift, hike at Rancho San Antonio, and drive up Highway 9
+              to catch the sunrise. I’m also into cooking, JDM cars, and games like Rust and CS2.
             </p>
             <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
               Let's Talk
