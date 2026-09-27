@@ -22,9 +22,7 @@ export default function About() {
               is one of those projects. I have a hard time settling for “good enough.”
             </p>
             <p>
-              Outside of class, I work as a personal trainer and have trained Brazilian Jiu-Jitsu
-              for over eight years. I lift, hike at Rancho San Antonio, and drive up Highway 9
-              to catch the sunrise. I’m also into cooking, JDM cars, and games like Rust and CS2.
+              Outside of class and work, I train Brazilian Jiu Jitsu, weightlift, and hike.
             </p>
             <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
               Let's Talk
