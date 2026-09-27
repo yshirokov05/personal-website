@@ -68,9 +68,7 @@ export default function Projects() {
         <p className="section-label">What I've built</p>
         <h2 className="section-title">Projects</h2>
         <p className="projects__intro">
-          Selected work spanning consumer finance, machine learning, and product analytics.
-          Each project began with a concrete problem and was built through implementation,
-          measurement, and iteration.
+          Selected projects in finance, data analysis, and machine learning.
         </p>
 
         <div className="projects__grid">

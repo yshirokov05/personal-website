@@ -2,7 +2,7 @@ import './About.css'
 
 const facts = [
   { label: 'Based in', value: 'San Jose, CA' },
-  { label: 'Education', value: 'Economics · Data Science minor @ UC Berkeley' },
+  { label: 'Education', value: 'Economics at UC Berkeley' },
   { label: 'Work', value: 'Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
@@ -17,15 +17,12 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I’m a UC Berkeley senior studying Economics with a minor in Data Science. I build
-              products at the intersection of finance, data, and AI, with hands-on experience in
-              full-stack development, machine learning, analytics, and algorithmic trading.
+              I’m studying Economics at UC Berkeley. Outside of class, I build PerfinLab and work
+              on a few data and software projects.
             </p>
             <p>
-              Outside of technology, I work as a personal trainer and have trained Brazilian
-              Jiu-Jitsu for more than eight years. I also enjoy strength training, hiking,
-              cooking, cars, and games. The same habits shape both sides of my work: stay curious,
-              test what matters, and keep improving the system.
+              I also work as a personal trainer and have trained Brazilian Jiu-Jitsu for more than
+              eight years. I enjoy lifting, hiking, cooking, cars, and games.
             </p>
             <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
               Let's Talk

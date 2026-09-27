@@ -10,7 +10,7 @@
 const SITE = 'https://yuryshirokov.vercel.app';
 
 const hero =
-  'UC Berkeley Economics student focused on product and data analytics. I apply economic reasoning and hands-on analytics to answer product questions and build useful financial tools. Seeking Product Analyst, Data Analyst, and Business Analyst roles.';
+  'Economics student at UC Berkeley. I build software and work on data projects, mostly in finance.';
 
 const caseStudy = {
   title: 'Safer portfolio edits at PerfinLab',

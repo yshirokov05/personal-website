@@ -6,16 +6,13 @@ export default function Hero() {
     <section id="hero" className="hero">
       <div className="hero__inner container">
         <div className="hero__copy">
-          <p className="section-label">Economics · Product and data analytics</p>
           <h1 className="hero__name">Yury Shirokov</h1>
           <h2 className="hero__title">
-            UC Berkeley Economics student focused on <span>product and data analytics.</span>
+            Economics student at <span>UC Berkeley.</span>
           </h2>
           <p className="hero__bio">
-            I apply economic reasoning and hands-on analytics to answer product questions
-            and build useful financial tools.
+            I build software and work on data projects, mostly in finance.
           </p>
-          <p className="hero__availability">Seeking Product Analyst, Data Analyst, and Business Analyst roles.</p>
           <div className="hero__cta">
             <a href="#projects" className="btn btn-primary">View selected work</a>
             <a
@@ -45,7 +42,7 @@ export default function Hero() {
           <img src="/perfinlab-screenshot.png" alt="PerfinLab financial dashboard" />
           <div className="hero__showcase-copy">
             <strong>PerfinLab</strong>
-            <p>Personal finance intelligence for clearer, better-informed decisions.</p>
+            <p>A personal finance app for tracking accounts, cash flow, and taxes.</p>
             <ul aria-label="Selected PerfinLab capabilities">
               <li>Bank sync</li>
               <li>50-state tax engine</li>
