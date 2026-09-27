@@ -17,30 +17,14 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I am a senior at the University of California, Berkeley majoring in Economics and
-              studying Data Science. I am based in the San Jose / Los Gatos area. My background is
-              in full-stack development, machine learning, and algorithmic trading. I have a bit
-              of a case of perfectionism which prohibits me from settling for things that are good
-              enough.
+              I’m a senior at UC Berkeley studying Economics and Data Science. I build things to
+              solve problems I run into myself, and I hope they help other people too. PerfinLab
+              is one of those projects. I have a hard time settling for “good enough.”
             </p>
             <p>
-              I like building things that solve problems and serve a purpose, oftentimes my own,
-              but I am a firm believer that I am pretty similar to the average well-intentioned
-              human who is equally burdened by mundane problems, so I tend to think that the
-              solutions I come up with will serve more than just myself.
-            </p>
-            <p>
-              Outside of thinking about solutions to problems, I enjoy partaking in the lovely
-              worldly offerings that the South Bay offers. I spend a good deal of time taking
-              care of my body and mind — I have been training Jiu-Jitsu for over eight years and
-              weightlifting for over seven years. I strongly believe in staying in motion. To clear
-              my head I enjoy hiking the trails in Rancho San Antonio and driving up Highway 9
-              to catch the sunrise over the Skyline.
-            </p>
-            <p>
-              Some of my other interests include: culinary <em>(my favorite cuisine varies with my mood)</em>,
-              automotives <em>(I have a strong admiration for JDM cars)</em>, and gaming <em>(some
-              of my favorite titles are Rust, Escape from Tarkov, CS2, and War Thunder)</em>.
+              Outside of class, I work as a personal trainer and have trained Brazilian Jiu-Jitsu
+              for over eight years. I lift, hike at Rancho San Antonio, and drive up Highway 9
+              to catch the sunrise. I’m also into cooking, JDM cars, and games like Rust and CS2.
             </p>
             <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
               Let's Talk
