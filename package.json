@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.cjs",
+    "build": "vite build && node scripts/prerender.js",
     "check": "npm run build && node scripts/verify-build.cjs",
     "preview": "vite preview"
   },

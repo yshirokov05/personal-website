@@ -28,10 +28,13 @@ after a merge, it's simplest to just use a new branch name.
 
 ## 2. Implement
 
-- Keep `scripts/site-content.cjs` in sync with `Projects.jsx` / `Skills.jsx`
-  — the prerender script duplicates that content because the build step
-  can't execute JSX, not because it's a second source of truth to grow
-  independently.
+- Edit the hero, case study, projects, and skills copy in `src/content.js`.
+  The components render it and `scripts/prerender.js` bakes the same data
+  into the crawlable HTML, so there is only one place to change. Keep that
+  file plain data (no JSX or asset imports) so Node can import it at build
+  time.
+- If the hero copy changes, regenerate `public/og-image.png` (the 1200×630
+  link preview) so shared links don't show stale text.
 - **Verify factual claims before writing them** — check the actual source
   repo (its CLAUDE.md / README / code) for whatever project or fact you're
   describing; don't restate old copy. This has caught real staleness twice:
@@ -44,8 +47,9 @@ after a merge, it's simplest to just use a new branch name.
 npm run build
 ```
 
-Must succeed (`vite build && node scripts/prerender.cjs`). This is the only
-gate — there is no test suite to run.
+Must succeed (`vite build && node scripts/prerender.js`). `npm run check`
+(what CI runs) also verifies the prerendered content and public assets.
+There is no test suite beyond that.
 
 ## 4. Commit, push, PR
 

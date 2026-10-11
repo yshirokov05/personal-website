@@ -1,4 +1,5 @@
 import { track } from '@vercel/analytics'
+import { hero } from '../content'
 import './Hero.css'
 
 export default function Hero() {
@@ -8,11 +9,9 @@ export default function Hero() {
         <div className="hero__copy">
           <h1 className="hero__name">Yury Shirokov</h1>
           <h2 className="hero__title">
-            Economics &amp; Data Science <span>- UC Berkeley</span>
+            {hero.title} <span>- {hero.school}</span>
           </h2>
-          <p className="hero__bio">
-            I build software and work on data projects, mostly in finance.
-          </p>
+          <p className="hero__bio">{hero.bio}</p>
           <div className="hero__cta">
             <a href="#projects" className="btn btn-primary">View selected work</a>
             <a
@@ -39,7 +38,12 @@ export default function Hero() {
             <span>Currently building</span>
             <span aria-hidden="true">↗</span>
           </div>
-          <img src="/perfinlab-screenshot.png" alt="PerfinLab financial dashboard" />
+          <img
+            src="/perfinlab-screenshot.png"
+            alt="PerfinLab net worth summary card"
+            width="1032"
+            height="780"
+          />
           <div className="hero__showcase-copy">
             <strong>PerfinLab</strong>
             <p>A personal finance app for tracking accounts, cash flow, and taxes.</p>

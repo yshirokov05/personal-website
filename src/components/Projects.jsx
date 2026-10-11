@@ -1,49 +1,6 @@
 import { track } from '@vercel/analytics'
+import { projects } from '../content'
 import './Projects.css'
-
-const projects = [
-  {
-    title: 'PerfinLab',
-    logo: '/perfinlab-logo.png',
-    screenshot: '/perfinlab-screenshot.png',
-    description:
-      'Built a full-stack personal finance app that turns linked account data into cash-flow, tax, and financial-health guidance. It combines Plaid sync, 50-state tax projections, and AI-assisted analysis on a Flask/Firebase backend.',
-    tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
-    highlights: ['50-state tax engine', '0–100 health score', 'Live bank sync'],
-    link: 'https://perfinlab.com/',
-    repo: null,
-    privateRepo: true,
-    featured: true,
-  },
-  {
-    title: 'Vanguard RL',
-    description:
-      'Built a reinforcement-learning prototype that connects a Rust game server to a Gymnasium/PPO training loop through a versioned JSON bridge. Deterministic resets, action acknowledgments, and automated smoke tests make experiments reproducible.',
-    tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
-    highlights: ['Atomic JSON bridge', 'One-bot MVP', '13 passing tests'],
-    link: null,
-    repo: 'https://github.com/yshirokov05/rust-rl-agent',
-  },
-  {
-    title: 'Quantbot',
-    description:
-      'Built an options-first paper-trading system: deterministic indicators screen closed 3-minute candles against a 15-minute trend, then Claude reviews actionable setups and selects a liquid call or put. A FastAPI backend and React dashboard expose scans, positions, trade history, and risk controls.',
-    tags: ['Python', 'FastAPI', 'React', 'Claude API'],
-    highlights: ['Indicator-based screening', 'Claude-reviewed setups', 'Paper trading with risk limits'],
-    link: null,
-    repo: null,
-    privateRepo: true,
-  },
-  {
-    title: 'E-commerce Funnel Analytics',
-    description:
-      'Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built session-level funnel and engagement metrics, and compared conversion behavior by device. The largest funnel drop-off was from product view to add-to-cart.',
-    tags: ['Python', 'BigQuery', 'SQL', 'Pandas'],
-    highlights: ['12M+ hit-level records', 'Session-level funnel', 'Device segmentation'],
-    link: null,
-    repo: 'https://github.com/yshirokov05/product-analytics-case-study',
-  },
-]
 
 function ExternalIcon() {
   return (

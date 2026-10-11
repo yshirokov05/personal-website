@@ -33,7 +33,8 @@
   color: var(--text-muted);
   margin-bottom: 24px;
 }
-.hero__title span { color: var(--accent); font-weight: 600; }
+/* Keep "- UC Berkeley" together so the line never breaks inside it. */
+.hero__title span { color: var(--accent); font-weight: 600; white-space: nowrap; }
 
 .hero__bio {
   max-width: 520px;
@@ -65,7 +66,8 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.hero__showcase > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+/* Show the whole screenshot; the img width/height attributes reserve its space. */
+.hero__showcase > img { width: 100%; height: auto; }
 .hero__showcase-copy { padding: 20px; }
 .hero__showcase-copy strong { display: block; margin-bottom: 4px; font-size: 1.25rem; }
 .hero__showcase-copy p { color: var(--text-muted); font-size: 0.92rem; }

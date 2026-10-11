@@ -44,7 +44,7 @@ export default function Navbar() {
           className="navbar__resume"
           target="_blank"
           rel="noreferrer"
-          onClick={() => track('resume_download')}
+          onClick={() => track('resume_click', { location: 'navbar' })}
         >
           Resume
         </a>
