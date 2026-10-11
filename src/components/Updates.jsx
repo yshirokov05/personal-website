@@ -1,15 +1,5 @@
+import { caseStudy } from '../content'
 import './Updates.css'
-
-const caseStudy = {
-  title: 'Safer portfolio edits at PerfinLab',
-  problem:
-    'Guests shared one demo portfolio, so an anonymous save could alter its sample data. Manual cash, savings, checking, and housing values could also be saved blank, zero, or negative.',
-  change:
-    'Made the guest demo read-only, required sign-in for portfolio writes, and added validation before manual values can be saved.',
-  result:
-    'Confirmed the validation in production with a synthetic QA entry. An isolated browser harness verified persistence after reload and stale-save conflict handling.',
-  tags: ['Access Control', 'Validation', 'QA'],
-}
 
 export default function Updates() {
   return (

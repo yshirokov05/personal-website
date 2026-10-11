@@ -115,8 +115,9 @@ export default function Contact() {
                 </div>
                 {status === 'error' && (
                   <p className="contact__error" id="contact-error" role="alert">
-                    Something went wrong sending your message. Please email me directly at{' '}
-                    <a href={getMailtoHref(form)}>open a prefilled email draft</a>.
+                    Something went wrong sending your message. Please{' '}
+                    <a href={getMailtoHref(form)}>email me directly</a> instead; your message
+                    will be filled in for you.
                   </p>
                 )}
                 <button

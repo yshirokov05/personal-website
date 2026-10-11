@@ -41,6 +41,7 @@ This builds the site, prerenders meaningful page content into `dist/index.html`,
 ## Project structure
 
 ```text
+src/content.js        Hero, case study, project, and skills copy (single source)
 src/components/       Page sections and section-level styles
 scripts/              Prerendering and production verification
 public/               Resume, project media, favicon, and social preview

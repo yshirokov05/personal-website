@@ -10,12 +10,19 @@
 // meaningful. React's createRoot replaces it on mount, so the live site is
 // unchanged for real visitors.
 //
+// The copy comes from src/content.js, the same data the React components
+// render, so the two can't drift apart.
+//
 // The prerender is part of the production build. If it cannot inject the
 // crawlable content, fail loudly rather than shipping a misleading green build.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { hero, caseStudy, projects, skillCategories } from '../src/content.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function main() {
   const distDir = path.resolve(__dirname, '..', 'dist');
@@ -25,10 +32,8 @@ function main() {
     throw new Error('dist/index.html not found — did the Vite build run?');
   }
 
-  const content = require('./site-content.cjs');
-
   const html = fs.readFileSync(templatePath, 'utf8');
-  const body = buildBody(content);
+  const body = buildBody();
   const injected = html.replace(/(<div id=["']root["']>)\s*(<\/div>)/i, `$1${body}$2`);
 
   if (injected === html) {
@@ -47,11 +52,12 @@ function esc(s) {
     .replace(/"/g, '&quot;');
 }
 
-function buildBody({ hero, caseStudy, projects, skills }) {
+function buildBody() {
+  const skills = skillCategories.flatMap(category => category.skills);
   const parts = [];
   parts.push('<main style="max-width:720px;margin:0 auto;padding:24px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">');
   parts.push('<h1>Yury Shirokov</h1>');
-  parts.push(`<p>${esc(hero)}</p>`);
+  parts.push(`<p>${esc(`${hero.title} - ${hero.school}. ${hero.bio}`)}</p>`);
 
   parts.push('<h2>Selected case study</h2>');
   parts.push(`<p><strong>${esc(caseStudy.title)}</strong></p>`);
