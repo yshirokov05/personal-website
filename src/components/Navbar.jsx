@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { track } from '@vercel/analytics'
 import './Navbar.css'
 
-const links = ['About', 'Projects', 'Updates', 'Skills', 'Contact']
+const links = ['About', 'Projects', 'Analysis', 'Coursework', 'Contact']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)

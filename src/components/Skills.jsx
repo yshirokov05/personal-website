@@ -3,10 +3,10 @@ import './Skills.css'
 
 export default function Skills() {
   return (
-    <section id="skills" className="skills">
+    <section id="coursework" className="skills">
       <div className="container">
-        <p className="section-label">What I work with</p>
-        <h2 className="section-title">Skills</h2>
+        <p className="section-label">What I've studied and use</p>
+        <h2 className="section-title">Coursework &amp; Skills</h2>
 
         <div className="skills__grid">
           {skillCategories.map(cat => (

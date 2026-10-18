@@ -32,13 +32,15 @@
 
 .skills__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
+/* Sits on the first line when an item (e.g. a course title) wraps. */
 .skills__dot {
+  margin-top: 0.55em;
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--accent);
