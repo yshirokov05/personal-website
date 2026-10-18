@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/prerender.js",
-    "check": "npm run build && node scripts/verify-build.cjs",
+    "check": "npm run build && node scripts/verify-build.js",
     "preview": "vite preview"
   },
   "dependencies": {

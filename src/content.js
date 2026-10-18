@@ -8,20 +8,45 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const hero = {
-  title: 'Economics & Data Science',
+  title: 'Economics',
   school: 'UC Berkeley',
-  bio: 'I build software and work on data projects, mostly in finance.',
+  bio: 'I study economics and use Python and SQL to analyze financial and business data.',
 }
 
+// Numbers come from data/funnel_metrics.csv in the
+// yshirokov05/product-analytics-case-study repo (July 2017 GA sample).
 export const caseStudy = {
-  title: 'Safer portfolio edits at PerfinLab',
-  problem:
-    'Guests shared one demo portfolio, so an anonymous save could alter its sample data. Manual cash, savings, checking, and housing values could also be saved blank, zero, or negative.',
-  change:
-    'Made the guest demo read-only, required sign-in for portfolio writes, and added validation before manual values can be saved.',
-  result:
-    'Confirmed the validation in production with a synthetic QA entry. An isolated browser harness verified persistence after reload and stale-save conflict handling.',
-  tags: ['Access Control', 'Validation', 'QA'],
+  eyebrow: 'Google Analytics sample · July 2017',
+  title: 'Where an online store loses its buyers',
+  intro:
+    'A funnel analysis of 12M+ Google Analytics records, written up the way I would present it to a business team.',
+  story: [
+    {
+      label: 'Question',
+      text: 'Between viewing a product and paying for it, where does an online store lose the most would-be buyers, and which step should it fix first?',
+    },
+    {
+      label: 'Approach',
+      text: 'Queried 12M+ hit-level records in BigQuery SQL, collapsed them into about 72,000 sessions, and flagged how far each session got in the purchase funnel.',
+    },
+    {
+      label: 'Finding',
+      text: '56% of product viewers never add to cart. That first step loses about 5,900 sessions, more than every later step combined (about 3,600). Only 1.4% of all sessions end in a purchase.',
+    },
+    {
+      label: 'Recommendation',
+      text: 'Test changes on the product page first (pricing, shipping details, trust signals). Checkout is less urgent: half of the shoppers who reach it already buy.',
+    },
+  ],
+  totalSessions: 71708,
+  funnel: [
+    { stage: 'Product view', sessions: 10539 },
+    { stage: 'Add to cart', sessions: 4618 },
+    { stage: 'Checkout', sessions: 2061 },
+    { stage: 'Purchase', sessions: 1031 },
+  ],
+  tags: ['SQL', 'BigQuery', 'Python', 'pandas'],
+  link: 'https://github.com/yshirokov05/product-analytics-case-study',
 }
 
 export const projects = [
@@ -30,8 +55,8 @@ export const projects = [
     logo: '/perfinlab-logo.png',
     screenshot: '/perfinlab-screenshot.png',
     description:
-      'Built a full-stack personal finance app that turns linked account data into cash-flow, tax, and financial-health guidance. It combines Plaid sync, 50-state tax projections, and AI-assisted analysis on a Flask/Firebase backend.',
-    tags: ['React', 'Flask', 'Firebase', 'Plaid API', 'Claude API'],
+      'Built a personal finance app that turns linked bank accounts into a picture of cash flow, projected taxes, and overall financial health. It projects taxes for all 50 states, scores financial health from 0 to 100, and adds AI-assisted analysis.',
+    tags: ['Python', 'Flask', 'React', 'Plaid API', 'Claude API'],
     highlights: ['50-state tax engine', '0–100 health score', 'Live bank sync'],
     link: 'https://perfinlab.com/',
     repo: null,
@@ -39,50 +64,57 @@ export const projects = [
     featured: true,
   },
   {
-    title: 'Vanguard RL',
+    title: 'E-commerce Funnel Analysis',
     description:
-      'Built a reinforcement-learning prototype that connects a private server for the video game Rust to a Gymnasium/PPO training loop through a versioned JSON bridge. Deterministic resets, action acknowledgments, and automated smoke tests make experiments reproducible.',
-    tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
-    highlights: ['Atomic JSON bridge', 'One-bot MVP', '13 passing tests'],
+      'Where does an online store lose its buyers? Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built a session-level purchase funnel, and compared conversion by device type. The largest drop came before shoppers ever added to cart.',
+    tags: ['SQL', 'BigQuery', 'Python', 'pandas'],
+    highlights: ['12M+ records', '56% drop before add-to-cart', '1.4% overall conversion'],
     link: null,
-    repo: 'https://github.com/yshirokov05/rust-rl-agent',
+    repo: 'https://github.com/yshirokov05/product-analytics-case-study',
   },
   {
     title: 'Quantbot',
     description:
-      'Built an options-first paper-trading system: deterministic indicators screen closed 3-minute candles against a 15-minute trend, then Claude reviews actionable setups and selects a liquid call or put. A FastAPI backend and React dashboard expose scans, positions, trade history, and risk controls.',
+      'An options paper-trading system (simulated money) that tests a rules-based strategy: technical indicators screen 3-minute price candles against the 15-minute trend, then Claude reviews each setup and picks a liquid call or put. A dashboard tracks positions, trade history, and risk limits.',
     tags: ['Python', 'FastAPI', 'React', 'Claude API'],
-    highlights: ['Indicator-based screening', 'Claude-reviewed setups', 'Paper trading with risk limits'],
+    highlights: ['Rules-based screening', 'Paper trading', 'Risk limits'],
     link: null,
     repo: null,
     privateRepo: true,
   },
   {
-    title: 'E-commerce Funnel Analytics',
+    title: 'AI Game Agent',
     description:
-      'Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built session-level funnel and engagement metrics, and compared conversion behavior by device. The largest funnel drop-off was from product view to add-to-cart.',
-    tags: ['Python', 'BigQuery', 'SQL', 'Pandas'],
-    highlights: ['12M+ hit-level records', 'Session-level funnel', 'Device segmentation'],
+      'A machine learning side project: a prototype for training an AI agent in the video game Rust. It connects a private game server to a reinforcement-learning (PPO) training loop, with deterministic resets and automated tests so experiments can be repeated.',
+    tags: ['Python', 'C#', 'PyTorch'],
+    highlights: ['Reinforcement learning', 'One-bot prototype', '13 passing tests'],
     link: null,
-    repo: 'https://github.com/yshirokov05/product-analytics-case-study',
+    repo: 'https://github.com/yshirokov05/rust-rl-agent',
   },
 ]
 
 export const skillCategories = [
   {
-    name: 'Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'C#', 'SQL'],
+    name: 'Economics coursework',
+    skills: [
+      'Econometrics (ECON\u00a0140)',
+      'Corporate & Personal Finance (ECON\u00a0158)',
+      'Money & Banking (ECON\u00a0165, in progress)',
+      'Microeconomics (ECON\u00a0100A)',
+      'Macroeconomics (ECON\u00a0100B)',
+      'Labor Economics (ECON\u00a0151, in progress)',
+    ],
   },
   {
-    name: 'Frontend',
-    skills: ['React', 'Vite', 'HTML/CSS', 'Responsive Design'],
+    name: 'Methods',
+    skills: ['Regression analysis', 'Hypothesis testing', 'Funnel & conversion analysis'],
   },
   {
-    name: 'Backend & Data',
-    skills: ['Flask', 'FastAPI', 'Node.js', 'Firebase', 'REST APIs', 'BigQuery'],
+    name: 'Data tools',
+    skills: ['Python', 'pandas', 'matplotlib', 'SQL', 'BigQuery'],
   },
   {
-    name: 'ML & Tools',
-    skills: ['PyTorch', 'Pandas', 'Claude API', 'Plaid API', 'Stripe', 'Docker', 'Git', 'Vercel'],
+    name: 'Built with',
+    skills: ['React', 'Flask', 'FastAPI', 'Firebase', 'Plaid API', 'Claude API', 'PyTorch'],
   },
 ]

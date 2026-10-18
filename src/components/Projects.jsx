@@ -25,7 +25,7 @@ export default function Projects() {
         <p className="section-label">What I've built</p>
         <h2 className="section-title">Projects</h2>
         <p className="projects__intro">
-          Selected projects in finance, data analysis, and machine learning.
+          Projects in finance and data analysis, plus one machine learning side project.
         </p>
 
         <div className="projects__grid">
@@ -41,8 +41,8 @@ export default function Projects() {
                   />
                 ) : (
                   <div className="project-card__signal">
-                    <span className="project-card__signal-label">Project signals</span>
-                    <ul aria-label={`${p.title} selected results`}>
+                    <span className="project-card__signal-label">Highlights</span>
+                    <ul aria-label={`${p.title} highlights`}>
                       {p.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
                     </ul>
                   </div>
@@ -53,13 +53,13 @@ export default function Projects() {
                   <div className="project-card__head">
                     {p.logo && <img src={p.logo} alt="" className="project-card__logo" />}
                     <div>
-                      {p.featured && <span className="project-card__eyebrow">Flagship case study</span>}
+                      {p.featured && <span className="project-card__eyebrow">Flagship project</span>}
                       <h3 className="project-card__title">{p.title}</h3>
                     </div>
                   </div>
                   <p className="project-card__desc">{p.description}</p>
                   {p.featured && (
-                    <ul className="project-card__highlights" aria-label="PerfinLab selected capabilities">
+                    <ul className="project-card__highlights" aria-label={`${p.title} highlights`}>
                       {p.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
                     </ul>
                   )}

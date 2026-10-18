@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/yshirokov05/personal-website/actions/workflows/ci.yml/badge.svg)](https://github.com/yshirokov05/personal-website/actions/workflows/ci.yml)
 
-Personal portfolio for Yury Shirokov, studying Economics and Data Science at UC Berkeley with projects in finance and software.
+Personal portfolio for Yury Shirokov, studying Economics at UC Berkeley (class of 2027) with projects in finance and data analysis.
 
 **Live site:** [yuryshirokov.vercel.app](https://yuryshirokov.vercel.app/)
 
@@ -10,7 +10,7 @@ Personal portfolio for Yury Shirokov, studying Economics and Data Science at UC 
 
 - Flagship PerfinLab case study with product capabilities and a live product link
 - Selected machine-learning, trading, and analytics projects with measurable signals
-- A concise product case study structured around problem, change, and result
+- A funnel analysis case study structured around question, approach, finding, and recommendation
 - Responsive, keyboard-friendly interface with reduced-motion support
 - Prerendered content and structured metadata for search engines and link previews
 
@@ -41,7 +41,7 @@ This builds the site, prerenders meaningful page content into `dist/index.html`,
 ## Project structure
 
 ```text
-src/content.js        Hero, case study, project, and skills copy (single source)
+src/content.js        Hero, case study, project, and coursework/skills copy (single source)
 src/components/       Page sections and section-level styles
 scripts/              Prerendering and production verification
 public/               Resume, project media, favicon, and social preview

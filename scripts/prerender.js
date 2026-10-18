@@ -53,17 +53,16 @@ function esc(s) {
 }
 
 function buildBody() {
-  const skills = skillCategories.flatMap(category => category.skills);
   const parts = [];
   parts.push('<main style="max-width:720px;margin:0 auto;padding:24px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif">');
   parts.push('<h1>Yury Shirokov</h1>');
   parts.push(`<p>${esc(`${hero.title} - ${hero.school}. ${hero.bio}`)}</p>`);
 
-  parts.push('<h2>Selected case study</h2>');
+  parts.push('<h2>Analysis</h2>');
   parts.push(`<p><strong>${esc(caseStudy.title)}</strong></p>`);
-  parts.push(`<p><strong>Problem:</strong> ${esc(caseStudy.problem)}</p>`);
-  parts.push(`<p><strong>Change:</strong> ${esc(caseStudy.change)}</p>`);
-  parts.push(`<p><strong>Result:</strong> ${esc(caseStudy.result)}</p>`);
+  for (const item of caseStudy.story) {
+    parts.push(`<p><strong>${esc(item.label)}:</strong> ${esc(item.text)}</p>`);
+  }
 
   parts.push('<h2>Projects</h2>');
   parts.push('<ul>');
@@ -72,8 +71,10 @@ function buildBody() {
   }
   parts.push('</ul>');
 
-  parts.push('<h2>Skills</h2>');
-  parts.push(`<p>${skills.map(esc).join(', ')}</p>`);
+  parts.push('<h2>Coursework &amp; Skills</h2>');
+  for (const category of skillCategories) {
+    parts.push(`<p><strong>${esc(category.name)}:</strong> ${category.skills.map(esc).join(', ')}</p>`);
+  }
 
   parts.push('<h2>Contact</h2>');
   parts.push('<p><a href="mailto:yshirokov05@gmail.com">yshirokov05@gmail.com</a> &middot; <a href="https://github.com/yshirokov05">github.com/yshirokov05</a> &middot; <a href="https://www.linkedin.com/in/yury-shirokov-2a1867275/">linkedin.com/in/yury-shirokov</a></p>');

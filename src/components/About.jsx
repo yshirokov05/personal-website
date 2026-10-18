@@ -2,7 +2,9 @@ import './About.css'
 
 const facts = [
   { label: 'Based in', value: 'San Jose, CA' },
-  { label: 'Education', value: 'Economics & Data Science · UC Berkeley' },
+  { label: 'Education', value: 'B.A. Economics, UC\u00a0Berkeley' },
+  { label: 'Graduating', value: 'May 2027' },
+  { label: 'Looking for', value: 'Finance & data/business analyst roles' },
   { label: 'Work', value: 'Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
@@ -17,9 +19,10 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I’m a senior at UC Berkeley studying Economics and Data Science. I build things to
-              solve problems I run into myself, and I hope they help other people too. PerfinLab
-              is one of those projects. I have a hard time settling for “good enough.”
+              I’m a senior at UC Berkeley studying Economics, graduating in May 2027. I’m most
+              interested in finance and in using data to make better business decisions. I build
+              things to solve problems I run into myself, and I hope they help other people too.
+              PerfinLab is one of those projects. I have a hard time settling for “good enough.”
             </p>
             <p>
               Outside of class and work, I train Brazilian Jiu Jitsu, weightlift, and hike.

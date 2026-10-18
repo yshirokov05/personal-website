@@ -1,0 +1,163 @@
+.analysis__intro {
+  max-width: 640px;
+  margin: -28px 0 40px;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+.analysis-card {
+  padding: clamp(22px, 4vw, 32px);
+  background: var(--bg-card);
+  border: 1px solid rgba(245,158,11,0.35);
+  border-radius: 12px;
+}
+
+.analysis-card__eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.analysis-card__title {
+  margin-bottom: 24px;
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.analysis-card__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.analysis-card__story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.analysis-card__story dt {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.analysis-card__story dd {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── Funnel chart: one series, horizontal bars from a shared baseline ── */
+.funnel {
+  padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.funnel figcaption {
+  margin-bottom: 18px;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.funnel ol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.funnel__row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 4px;
+}
+
+.funnel__stage {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.funnel__track {
+  display: block;
+  height: 20px;
+  border-left: 1px solid var(--border);
+}
+
+.funnel__bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+
+.funnel__value {
+  min-width: 52px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.funnel__rate {
+  grid-column: 2 / 4;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.funnel__row--emphasis .funnel__rate {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.analysis-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.analysis-card__tags li {
+  padding: 4px 10px;
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.18);
+  border-radius: 20px;
+  color: var(--accent);
+  font-size: 0.8125rem;
+}
+
+.analysis__link {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 28px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.analysis__link:hover { text-decoration: underline; }
+.analysis__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+@media (max-width: 960px) {
+  .analysis-card__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .analysis-card__story { grid-template-columns: 1fr; gap: 18px; }
+  .analysis-card__title { margin-bottom: 20px; }
+  .funnel { padding: 16px; }
+  .funnel__row { grid-template-columns: 92px minmax(0, 1fr) auto; column-gap: 10px; }
+}
