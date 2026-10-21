@@ -19,6 +19,7 @@ Personal portfolio for Yury Shirokov, studying Economics at UC Berkeley (class o
 - React 18 and Vite
 - Vercel Analytics
 - Formspree contact form
+- Visit counter: a Vercel Function (`api/visits.js`) backed by Upstash Redis
 - Custom CSS with responsive layouts and design tokens
 
 ## Local development
@@ -43,6 +44,7 @@ This builds the site, prerenders meaningful page content into `dist/index.html`,
 ```text
 src/content.js        Hero, case study, project, and coursework/skills copy (single source)
 src/components/       Page sections and section-level styles
+api/visits.js         Visit counter function (Upstash Redis via the Vercel Marketplace)
 scripts/              Prerendering and production verification
 public/               Resume, project media, favicon, and social preview
 index.html            Metadata and application entry document
@@ -52,6 +54,8 @@ vercel.json           Routing, caching, and security headers
 ## Deployment
 
 The site deploys to Vercel from the `main` branch. Vercel builds with `npm run build` and serves the generated `dist` directory.
+
+The footer's visit count needs an Upstash Redis database connected to the Vercel project (Storage tab → Upstash for Redis). Until one is connected, `/api/visits` returns 503 and the footer hides the count. The count only appears on Vercel deployments; `npm run dev` doesn't run the `api/` function.
 
 ## Contact
 
