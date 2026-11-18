@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { track } from '@vercel/analytics'
+import { track } from '../analytics'
 import './Contact.css'
 
 // Formspree form endpoint. Public by design (it lives in the form action),

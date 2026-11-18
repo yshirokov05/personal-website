@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { track } from '@vercel/analytics'
+import { track } from '../analytics'
 import './Navbar.css'
 
 const links = ['About', 'Projects', 'Analysis', 'Coursework', 'Contact']

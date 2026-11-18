@@ -51,14 +51,17 @@ export const caseStudy = {
 
 export const projects = [
   {
+    // Facts checked against the yshirokov05/perfinlab repo (CLAUDE.md, landing
+    // page, CHANGELOG v1.8.0) on 2026-11-18. Re-check there before editing.
     title: 'PerfinLab',
     logo: '/perfinlab-logo.png',
     screenshot: '/perfinlab-screenshot.png',
     description:
-      'Built a personal finance app that turns linked bank accounts into a picture of cash flow, projected taxes, and overall financial health. It projects taxes for all 50 states, scores financial health from 0 to 100, and adds AI-assisted analysis.',
-    tags: ['Python', 'Flask', 'React', 'Plaid API', 'Claude API'],
-    highlights: ['50-state tax engine', '0–100 health score', 'Live bank sync'],
+      'A personal finance app I designed, built, and run myself. It shows net worth, cash flow, and a running tax estimate for all 50 states, and a Show Math button opens the calculation behind each figure. Premium ($9.99 a month or $99.99 a year) links accounts through Plaid and adds a Claude-powered AI Analyst and daily portfolio briefing.',
+    tags: ['Python', 'Flask', 'React', 'Firebase', 'Plaid API', 'Claude API', 'Stripe'],
+    highlights: ['50-state tax estimate', 'Show Math on every number', 'AI Analyst + daily briefing'],
     link: 'https://perfinlab.com/',
+    demo: 'https://perfinlab.com/demo',
     repo: null,
     privateRepo: true,
     featured: true,

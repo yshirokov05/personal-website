@@ -1,4 +1,4 @@
-import { track } from '@vercel/analytics'
+import { track } from '../analytics'
 import { hero } from '../content'
 import './Hero.css'
 
@@ -46,11 +46,11 @@ export default function Hero() {
           />
           <div className="hero__showcase-copy">
             <strong>PerfinLab</strong>
-            <p>A personal finance app for tracking accounts, cash flow, and taxes.</p>
+            <p>A personal finance app for net worth, cash flow, and taxes, with the math behind every number.</p>
             <ul aria-label="Selected PerfinLab capabilities">
               <li>Bank sync</li>
-              <li>50-state tax engine</li>
-              <li>AI analysis</li>
+              <li>50-state tax estimate</li>
+              <li>AI Analyst</li>
             </ul>
           </div>
         </a>
