@@ -55,7 +55,10 @@ export const projects = [
     // page, CHANGELOG v1.8.0) on 2026-11-18. Re-check there before editing.
     title: 'PerfinLab',
     logo: '/perfinlab-logo.png',
-    screenshot: '/perfinlab-screenshot.png',
+    // Same sample-data card the PerfinLab landing page uses (frontend/public/landing/q-cashflow.png).
+    // The hero already shows the net worth card, so this one shows cash flow.
+    screenshot: '/perfinlab-cashflow.png',
+    screenshotAlt: 'PerfinLab monthly cash flow card with income, spending, and savings rate',
     description:
       'A personal finance app I designed, built, and run myself. It shows net worth, cash flow, and a running tax estimate for all 50 states, and a Show Math button opens the calculation behind each figure. Premium ($9.99 a month or $99.99 a year) links accounts through Plaid and adds a Claude-powered AI Analyst and daily portfolio briefing.',
     tags: ['Python', 'Flask', 'React', 'Firebase', 'Plaid API', 'Claude API', 'Stripe'],
@@ -69,10 +72,11 @@ export const projects = [
   {
     title: 'E-commerce Funnel Analysis',
     description:
-      'Where does an online store lose its buyers? Analyzed 12M+ hit-level records from the public Google Analytics sample in BigQuery, built a session-level purchase funnel, and compared conversion by device type. The largest drop came before shoppers ever added to cart.',
+      'Where does an online store lose its buyers? A BigQuery SQL funnel analysis of 12M+ Google Analytics records. The full write-up is in the Analysis section below.',
     tags: ['SQL', 'BigQuery', 'Python', 'pandas'],
     highlights: ['12M+ records', '56% drop before add-to-cart', '1.4% overall conversion'],
     link: null,
+    caseStudyAnchor: '#analysis',
     repo: 'https://github.com/yshirokov05/product-analytics-case-study',
   },
   {

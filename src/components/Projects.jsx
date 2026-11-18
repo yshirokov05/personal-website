@@ -35,7 +35,7 @@ export default function Projects() {
                 {p.screenshot ? (
                   <img
                     src={p.screenshot}
-                    alt={`${p.title} app screenshot`}
+                    alt={p.screenshotAlt || `${p.title} app screenshot`}
                     className="project-card__screenshot"
                     loading="lazy"
                   />
@@ -69,6 +69,15 @@ export default function Projects() {
                     {p.tags.map(t => <li key={t}>{t}</li>)}
                   </ul>
                   <div className="project-card__links">
+                    {p.caseStudyAnchor && (
+                      <a
+                        href={p.caseStudyAnchor}
+                        className="project-card__link"
+                        onClick={() => track('project_link_click', { project: p.title, type: 'case_study_anchor' })}
+                      >
+                        Read the case study <span aria-hidden="true">↓</span>
+                      </a>
+                    )}
                     {p.repo && (
                       <a
                         href={p.repo}
