@@ -82,7 +82,7 @@ export const projects = [
   {
     title: 'Quantbot',
     description:
-      'An options paper-trading system (simulated money) that tests a rules-based strategy: technical indicators screen 3-minute price candles against the 15-minute trend, then Claude reviews each setup and picks a liquid call or put. A dashboard tracks positions, trade history, and risk limits.',
+      'In progress: an options paper-trading system (simulated money only) that tests a rules-based strategy. Technical indicators screen 3-minute price candles against the 15-minute trend, then Claude reviews each setup and picks a liquid call or put. A dashboard tracks positions, trade history, and risk limits.',
     tags: ['Python', 'FastAPI', 'React', 'Claude API'],
     highlights: ['Rules-based screening', 'Paper trading', 'Risk limits'],
     link: null,
@@ -90,11 +90,14 @@ export const projects = [
     privateRepo: true,
   },
   {
+    // Owner confirmed 2026-11-18 that he can't back the old "1.6M timesteps" or
+    // "200 steps/sec" figures from the rust-rl-agent README. Don't add metrics here
+    // unless he confirms them. Wording matches the master resume.
     title: 'AI Game Agent',
     description:
-      'A machine learning side project: a prototype for training an AI agent in the video game Rust. It connects a private game server to a reinforcement-learning (PPO) training loop, with deterministic resets and automated tests so experiments can be repeated.',
-    tags: ['Python', 'C#', 'PyTorch'],
-    highlights: ['Reinforcement learning', 'One-bot prototype', '13 passing tests'],
+      'In progress: an AI agent that learns by trial and error to survive and gather resources in the video game Rust. A custom C# plugin on a private game server talks to a Python training loop (PPO with Stable-Baselines3), with checkpointing and Weights & Biases tracking.',
+    tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
+    highlights: ['Reinforcement learning (PPO)', 'C# game plugin + Python', 'In progress'],
     link: null,
     repo: 'https://github.com/yshirokov05/rust-rl-agent',
   },
