@@ -5,7 +5,7 @@ const facts = [
   { label: 'Education', value: 'B.A. Economics, UC\u00a0Berkeley' },
   { label: 'Graduating', value: 'May 2027' },
   { label: 'Looking for', value: 'Finance & data/business analyst roles' },
-  { label: 'Work', value: 'CRM & automation at FloodDry · Personal trainer at the YMCA' },
+  { label: 'Work', value: 'CRM & Automation at FloodDry and Personal Trainer' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
 
