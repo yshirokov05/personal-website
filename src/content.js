@@ -93,7 +93,7 @@ export const projects = [
     // Owner confirmed 2026-11-18 that he can't back the old "1.6M timesteps" or
     // "200 steps/sec" figures from the rust-rl-agent README. Don't add metrics here
     // unless he confirms them. Wording matches the master resume.
-    title: 'AI Game Agent',
+    title: 'RustBot',
     description:
       'In progress: an AI agent that learns by trial and error to survive and gather resources in the video game Rust. A custom C# plugin on a private game server talks to a Python training loop (PPO with Stable-Baselines3), with checkpointing and Weights & Biases tracking.',
     tags: ['Python', 'C#', 'PyTorch', 'Stable-Baselines3'],
