@@ -7,7 +7,7 @@
 //     switched on for the project in the Vercel dashboard.
 //   • Google Analytics 4: the same, plus age/gender/interest reports
 //     (demographics) and click events. Loads only in production builds, and only
-//     when a measurement ID is set below or in VITE_GA_MEASUREMENT_ID.
+//     using the ID below (VITE_GA_MEASUREMENT_ID overrides it).
 //
 // Components call track('event_name', { ...details }) from this file, never a
 // tool's own API, so every click event reaches both tools.
@@ -17,7 +17,7 @@ import { track as vercelTrack } from '@vercel/analytics'
 
 // The GA4 "Measurement ID" (looks like G-XXXXXXXXXX). It is public by design:
 // it appears in the page source of every site that uses GA4.
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || ''
+const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XTK23LTBNQ'
 
 // Visitors who send Global Privacy Control (a browser "do not sell or share"
 // signal that California law asks sites to honor) and automated browsers are
