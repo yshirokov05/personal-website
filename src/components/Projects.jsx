@@ -1,4 +1,4 @@
-import { track } from '@vercel/analytics'
+import { track } from '../analytics'
 import { projects } from '../content'
 import './Projects.css'
 
@@ -94,6 +94,18 @@ export default function Projects() {
                         onClick={() => track('project_link_click', { project: p.title, type: 'demo' })}
                       >
                         <ExternalIcon /> Visit product
+                      </a>
+                    )}
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        className="project-card__link"
+                        aria-label={`${p.title} demo with sample data, no signup`}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => track('project_link_click', { project: p.title, type: 'sample_demo' })}
+                      >
+                        <ExternalIcon /> Try the demo
                       </a>
                     )}
                   </div>

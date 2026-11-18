@@ -1,4 +1,4 @@
-import { track } from '@vercel/analytics'
+import { track } from '../analytics'
 import { caseStudy } from '../content'
 import './Analysis.css'
 

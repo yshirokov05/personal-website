@@ -17,7 +17,7 @@ Personal portfolio for Yury Shirokov, studying Economics at UC Berkeley (class o
 ## Stack
 
 - React 18 and Vite
-- Vercel Analytics
+- Visitor analytics in `src/analytics.js`: Vercel Web Analytics (cookie-free; switch it on under the Vercel project's Analytics tab) and Google Analytics 4 for demographics and click events (set `VITE_GA_MEASUREMENT_ID` in Vercel to a `G-…` ID; nothing loads without it, and visitors sending Global Privacy Control are skipped)
 - Formspree contact form
 - Visit counter: a Vercel Function (`api/visits.js`) backed by Upstash Redis
 - Custom CSS with responsive layouts and design tokens
@@ -42,6 +42,7 @@ This builds the site, prerenders meaningful page content into `dist/index.html`,
 ## Project structure
 
 ```text
+src/analytics.js      Analytics setup + track() used by every click event
 src/content.js        Hero, case study, project, and coursework/skills copy (single source)
 src/components/       Page sections and section-level styles
 api/visits.js         Visit counter function (Upstash Redis via the Vercel Marketplace)

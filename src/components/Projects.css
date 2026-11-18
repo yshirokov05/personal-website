@@ -150,7 +150,8 @@
 
 .project-card__links {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
 }
 .project-card__link {
   display: inline-flex;
@@ -158,11 +159,13 @@
   gap: 6px;
   font-size: 0.85rem;
   color: var(--text-muted);
+  white-space: nowrap;
   transition: color 0.2s;
 }
 .project-card__link:hover { color: var(--accent); }
 .project-card__private {
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   font-size: 0.85rem;
   color: var(--text-muted);
