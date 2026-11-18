@@ -12,6 +12,7 @@
   flex-direction: column;
   gap: 16px;
 }
+.about__cta { align-self: flex-start; margin-top: 24px; }
 .about__text p { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; }
 
 .about__sidebar-title {

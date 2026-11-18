@@ -2,10 +2,10 @@ import './About.css'
 
 const facts = [
   { label: 'Based in', value: 'San Jose, CA' },
-  { label: 'Education', value: 'B.A. Economics, UC\u00a0Berkeley' },
+  { label: 'Education', value: 'B.A. Economics, minor in Data Science, UC\u00a0Berkeley' },
   { label: 'Graduating', value: 'May 2027' },
   { label: 'Looking for', value: 'Finance & data/business analyst roles' },
-  { label: 'Work', value: 'Personal Trainer' },
+  { label: 'Work', value: 'CRM & automation at FloodDry · Personal trainer at the YMCA' },
   { label: 'Interests', value: 'BJJ · Weightlifting · Hiking' },
 ]
 
@@ -19,15 +19,20 @@ export default function About() {
         <div className="about__grid">
           <div className="about__text">
             <p>
-              I’m a senior at UC Berkeley studying Economics, graduating in May 2027. I’m most
+              I’m a senior at UC Berkeley studying Economics with a minor in Data Science, graduating in May 2027. I’m most
               interested in finance and in using data to make better business decisions. I build
               things to solve problems I run into myself, and I hope they help other people too.
               PerfinLab is one of those projects. I have a hard time settling for “good enough.”
             </p>
             <p>
+              At work I run the CRM and automate lead intake and job scheduling for FloodDry, a
+              water damage restoration company in San Jose, and I coach as a personal trainer at the
+              Southwest YMCA.
+            </p>
+            <p>
               Outside of class and work, I train Brazilian Jiu Jitsu, weightlift, and hike.
             </p>
-            <a href="#contact" className="btn btn-outline" style={{ marginTop: '24px' }}>
+            <a href="#contact" className="btn btn-outline about__cta">
               Let's Talk
             </a>
           </div>
