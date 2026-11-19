@@ -77,7 +77,7 @@ function buildBody() {
   }
 
   parts.push('<h2>Contact</h2>');
-  parts.push('<p><a href="mailto:yshirokov05@gmail.com">yshirokov05@gmail.com</a> &middot; <a href="https://github.com/yshirokov05">github.com/yshirokov05</a> &middot; <a href="https://www.linkedin.com/in/yury-shirokov-2a1867275/">linkedin.com/in/yury-shirokov</a></p>');
+  parts.push('<p><a href="mailto:yshirokov05@gmail.com">yshirokov05@gmail.com</a> &middot; <a href="https://github.com/yshirokov05">github.com/yshirokov05</a> &middot; <a href="https://www.linkedin.com/in/yury-shirokov/">linkedin.com/in/yury-shirokov</a></p>');
 
   parts.push('</main>');
   return parts.join('');

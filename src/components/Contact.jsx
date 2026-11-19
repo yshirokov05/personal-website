@@ -69,7 +69,7 @@ export default function Contact() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/yury-shirokov-2a1867275/"
+                  href="https://www.linkedin.com/in/yury-shirokov/"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => track('social_click', { network: 'linkedin' })}
