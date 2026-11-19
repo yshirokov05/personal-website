@@ -60,5 +60,5 @@ The footer's visit count needs an Upstash Redis database connected to the Vercel
 
 ## Contact
 
-- [LinkedIn](https://www.linkedin.com/in/yury-shirokov-2a1867275/)
+- [LinkedIn](https://www.linkedin.com/in/yury-shirokov/)
 - [GitHub](https://github.com/yshirokov05)
