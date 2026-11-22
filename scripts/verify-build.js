@@ -31,12 +31,23 @@ const requiredContent = [
   caseStudy.title,
   ...caseStudy.story.map(item => item.text),
   ...projects.map(project => project.title),
+  ...projects.flatMap(project => (project.updates || []).slice(0, 3).map(u => u.text)),
   'Contact',
 ].map(esc);
 const missingContent = requiredContent.filter(value => !html.includes(value));
 
 if (missingContent.length > 0) {
   throw new Error(`prerendered HTML is missing: ${missingContent.join(' | ')}`);
+}
+
+// The weekly update routine edits `updates` by hand-off from an AI run, so
+// check its shape here: CI then blocks a malformed entry before it ships.
+for (const project of projects) {
+  for (const u of project.updates || []) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(u.date || '')) throw new Error(`${project.title} update has a bad date: ${u.date}`);
+    if (typeof u.text !== 'string' || u.text.length < 20 || u.text.length > 220) throw new Error(`${project.title} update text must be 20-220 characters: ${u.text}`);
+    if (!Array.isArray(u.prs) || u.prs.length === 0) throw new Error(`${project.title} update needs the PR numbers it is based on: ${u.text}`);
+  }
 }
 
 for (const asset of ['favicon.svg', 'og-image.png', 'resume.pdf']) {

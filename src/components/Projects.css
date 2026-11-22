@@ -132,6 +132,26 @@
   text-align: center;
 }
 
+.project-card__updates { margin-top: 20px; }
+.project-card__updates-label {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.project-card__updates ul { list-style: none; display: grid; gap: 8px; }
+.project-card__updates li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+.project-card__updates time { color: var(--text-muted); font-size: 0.75rem; padding-top: 1px; }
+
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -175,4 +195,5 @@
   .project-card.project-card--featured { grid-template-columns: 1fr; }
   .project-card--featured .project-card__media { min-height: 240px; border-right: 0; border-bottom: 1px solid var(--border); }
   .project-card__highlights { grid-template-columns: 1fr; }
+  .project-card__updates li { grid-template-columns: 1fr; gap: 2px; }
 }
