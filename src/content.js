@@ -63,6 +63,27 @@ export const projects = [
       'A personal finance app I designed, built, and run myself. It shows net worth, cash flow, and a running tax estimate for all 50 states, and a Show Math button opens the calculation behind each figure. Premium ($9.99 a month or $99.99 a year) links accounts through Plaid and adds a Claude-powered AI Analyst and daily portfolio briefing.',
     tags: ['Python', 'Flask', 'React', 'Firebase', 'Plaid API', 'Claude API', 'Stripe'],
     highlights: ['50-state tax estimate', 'Show Math on every number', 'AI Analyst + daily briefing'],
+    // "Latest updates" log, newest first. The weekly website-update routine adds
+    // entries here (playbook: .claude/skills/weekly-progress-update/SKILL.md).
+    // `prs` lists the perfinlab pull requests each line is based on, so a later
+    // run never writes the same milestone twice. The card shows the first 3.
+    updates: [
+      {
+        date: '2026-11-21',
+        text: 'Turned the tax estimate into a full return: deductions, credits (child, education, Earned Income), and the final refund or amount owed.',
+        prs: [232, 252, 264],
+      },
+      {
+        date: '2026-11-21',
+        text: 'Made bank data refresh on its own with Plaid webhooks and automatic sync, and made sure a failed bank read can never overwrite saved data.',
+        prs: [233, 251],
+      },
+      {
+        date: '2026-11-21',
+        text: 'Hardened security for the beta: a separate encryption key for each kind of secret, revoked-login checks, and limits on two-factor code guesses.',
+        prs: [229, 239, 240, 244],
+      },
+    ],
     link: 'https://perfinlab.com/',
     demo: 'https://perfinlab.com/demo',
     repo: null,

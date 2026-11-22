@@ -67,7 +67,15 @@ function buildBody() {
   parts.push('<h2>Projects</h2>');
   parts.push('<ul>');
   for (const p of projects) {
-    parts.push(`<li><strong>${esc(p.title)}</strong> &mdash; ${esc(p.description)}</li>`);
+    parts.push(`<li><strong>${esc(p.title)}</strong> &mdash; ${esc(p.description)}`);
+    if (p.updates && p.updates.length) {
+      parts.push('<ul>');
+      for (const u of p.updates.slice(0, 3)) {
+        parts.push(`<li>${esc(u.date)}: ${esc(u.text)}</li>`);
+      }
+      parts.push('</ul>');
+    }
+    parts.push('</li>');
   }
   parts.push('</ul>');
 

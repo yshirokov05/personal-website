@@ -2,6 +2,13 @@ import { track } from '../analytics'
 import { projects } from '../content'
 import './Projects.css'
 
+// "2026-11-21" -> "Nov 2026". Parsed by hand so the visitor's time zone can't shift the month.
+function monthLabel(isoDate) {
+  const [year, month] = isoDate.split('-').map(Number)
+  const names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  return `${names[month - 1]} ${year}`
+}
+
 function ExternalIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -62,6 +69,19 @@ export default function Projects() {
                     <ul className="project-card__highlights" aria-label={`${p.title} highlights`}>
                       {p.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
                     </ul>
+                  )}
+                  {p.updates?.length > 0 && (
+                    <div className="project-card__updates">
+                      <p className="project-card__updates-label">Latest updates</p>
+                      <ul>
+                        {p.updates.slice(0, 3).map(u => (
+                          <li key={u.text}>
+                            <time dateTime={u.date}>{monthLabel(u.date)}</time>
+                            <span>{u.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </div>
                 <div className="project-card__bottom">
