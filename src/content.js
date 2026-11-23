@@ -52,7 +52,7 @@ export const caseStudy = {
 export const projects = [
   {
     // Facts checked against the yshirokov05/perfinlab repo (CLAUDE.md, landing
-    // page, CHANGELOG v1.8.0) on 2026-11-18. Re-check there before editing.
+    // page, CHANGELOG v1.8.0) on 2026-11-18; forecast added 2026-11-23. Re-check there before editing.
     title: 'PerfinLab',
     logo: '/perfinlab-logo.png',
     // Same sample-data card the PerfinLab landing page uses (frontend/public/landing/q-cashflow.png).
@@ -60,7 +60,7 @@ export const projects = [
     screenshot: '/perfinlab-cashflow.png',
     screenshotAlt: 'PerfinLab monthly cash flow card with income, spending, and savings rate',
     description:
-      'A personal finance app I designed, built, and run myself. It shows net worth, cash flow, and a running tax estimate for all 50 states, and a Show Math button opens the calculation behind each figure. Premium ($9.99 a month or $99.99 a year) links accounts through Plaid and adds a Claude-powered AI Analyst and daily portfolio briefing.',
+      'A personal finance app I designed, built, and run myself. It shows net worth, cash flow, and a running tax estimate for all 50 states, and a Show Math button opens the calculation behind each figure. Premium ($9.99 a month or $99.99 a year) links accounts through Plaid and adds a Claude-powered AI Analyst, a daily portfolio briefing, and a net worth forecast.',
     tags: ['Python', 'Flask', 'React', 'Firebase', 'Plaid API', 'Claude API', 'Stripe'],
     highlights: ['50-state tax estimate', 'Show Math on every number', 'AI Analyst + daily briefing'],
     // "Latest updates" log, newest first. The weekly website-update routine adds
@@ -68,6 +68,21 @@ export const projects = [
     // `prs` lists the perfinlab pull requests each line is based on, so a later
     // run never writes the same milestone twice. The card shows the first 3.
     updates: [
+      {
+        date: '2026-11-23',
+        text: 'Added a Premium net worth forecast: a Monte Carlo simulation of where net worth could be in 1 or 5 years, shown as a likely range and labeled as a projection.',
+        prs: [280],
+      },
+      {
+        date: '2026-11-23',
+        text: 'Added a "What\'s worth it to you?" card: users rate how much they enjoy each kind of non-essential spending, and the app suggests cuts to the least-valued, with each cut\'s 5-year effect.',
+        prs: [278, 282],
+      },
+      {
+        date: '2026-11-23',
+        text: 'Made state taxes more precise: separate 2025 and 2026 tables, real head-of-household rates, and city and county income taxes such as New York City and Philadelphia.',
+        prs: [277, 279, 281],
+      },
       {
         date: '2026-11-21',
         text: 'Turned the tax estimate into a full return: deductions, credits (child, education, Earned Income), and the final refund or amount owed.',
