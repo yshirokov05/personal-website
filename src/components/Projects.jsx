@@ -125,6 +125,16 @@ export default function Projects() {
                         <ExternalIcon /> Visit product
                       </a>
                     )}
+                    {p.beta && (
+                      <a
+                        href={p.beta}
+                        className="project-card__link project-card__link--beta"
+                        aria-label={`Email to join the ${p.title} beta`}
+                        onClick={() => track('beta_join_click', { location: 'project_card' })}
+                      >
+                        Join the beta <span aria-hidden="true">→</span>
+                      </a>
+                    )}
                     {p.demo && (
                       <a
                         href={p.demo}
