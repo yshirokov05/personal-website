@@ -1,5 +1,5 @@
 import { track } from '../analytics'
-import { hero } from '../content'
+import { hero, perfinlabBetaLink } from '../content'
 import './Hero.css'
 
 export default function Hero() {
@@ -22,6 +22,13 @@ export default function Hero() {
               onClick={() => track('resume_click', { location: 'hero' })}
             >
               View résumé
+            </a>
+            <a
+              href={perfinlabBetaLink}
+              className="btn btn-outline"
+              onClick={() => track('beta_join_click', { location: 'hero' })}
+            >
+              Join the PerfinLab beta
             </a>
           </div>
         </div>

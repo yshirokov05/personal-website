@@ -183,6 +183,8 @@
   transition: color 0.2s;
 }
 .project-card__link:hover { color: var(--accent); }
+.project-card__link--beta { color: var(--accent); font-weight: 600; }
+.project-card__link--beta:hover { color: #fbbf24; }
 .project-card__private {
   display: inline-flex;
   white-space: nowrap;

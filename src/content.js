@@ -7,6 +7,14 @@
 // directly during the build.
 // ─────────────────────────────────────────────────────────────────────────────
 
+// "Join the beta" opens an email to PerfinLab support with the subject filled in,
+// so Yury can send the person an invite. There is no separate beta signup page.
+export const perfinlabBetaLink =
+  'mailto:support@perfinlab.com?subject=' +
+  encodeURIComponent('PerfinLab beta') +
+  '&body=' +
+  encodeURIComponent("Hi Yury, I'd like to try the PerfinLab beta.\n\nA bit about how I manage money today (optional):\n")
+
 export const hero = {
   title: 'Economics',
   school: 'UC Berkeley',
@@ -101,6 +109,7 @@ export const projects = [
     ],
     link: 'https://perfinlab.com/',
     demo: 'https://perfinlab.com/demo',
+    beta: perfinlabBetaLink,
     repo: null,
     privateRepo: true,
     featured: true,
